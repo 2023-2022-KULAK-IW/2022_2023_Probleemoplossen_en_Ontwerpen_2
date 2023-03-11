@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.9.28)  10 MAR 2023 12:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.9.28)  10 MAR 2023 14:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -785,11 +785,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 39--48
 {c:/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <c:/texlive/texm
 f-local/tex/latex/local/LaTeX2022/kulak/kulakLogo.pdf> <c:/texlive/texmf-local/
 tex/latex/local/LaTeX2022/kulak/kuleuvenSedes.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 55--73
+
+ []
+
 File: kuleuvenSedes.pdf Graphic file (type pdf)
 <use kuleuvenSedes.pdf>
-Package pdftex.def Info: kuleuvenSedes.pdf  used on input line 124.
+Package pdftex.def Info: kuleuvenSedes.pdf  used on input line 120.
 (pdftex.def)             Requested size: 25.00282pt x 42.67912pt.
-
 
 Package fancyhdr Warning: \headheight is too small (42.67912pt): 
 (fancyhdr)                Make it at least 46.27914pt, for example:
@@ -802,7 +805,7 @@ Package fancyhdr Warning: \headheight is too small (42.67912pt):
 AED: lastpage setting LastPage
 File: kuleuvenSedes.pdf Graphic file (type pdf)
 <use kuleuvenSedes.pdf>
-Package pdftex.def Info: kuleuvenSedes.pdf  used on input line 147.
+Package pdftex.def Info: kuleuvenSedes.pdf  used on input line 165.
 (pdftex.def)             Requested size: 25.00282pt x 42.67912pt.
 
 Package fancyhdr Warning: \headheight is too small (42.67912pt): 
@@ -832,7 +835,7 @@ e1/public/cm-super/sfbx1440.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/
 cm-super/sfrm0800.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/cm-super/s
 frm1000.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pf
 b>
-Output written on "Groepsverslag P&O 2.pdf" (3 pages, 293630 bytes).
+Output written on "Groepsverslag P&O 2.pdf" (3 pages, 296011 bytes).
 PDF statistics:
  187 PDF objects out of 1000 (max. 8388607)
  148 compressed objects within 2 object streams
