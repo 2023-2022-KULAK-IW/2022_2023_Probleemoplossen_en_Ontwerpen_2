@@ -18,12 +18,12 @@ int pomp = 11;
 """
 gegevens nodig:
 """
-#horizontaal:
-aantalGradenH = -1; #te krijgen van webcam
 
 #verticaal:
 aantalGradenV = -1;#te krijgen van berekening na meting afstand en waterflow
 
+#horizontaal
+aantalGradenH = -50; #te krijgen van webcam
 #wachten:
 tijdBlussen = -1; #te krijgen na berekening na meting afstand en waterflow [ms]
 
@@ -40,9 +40,8 @@ void setup(){
   pinMode(pomp, OUTPUT);
 
   #horizontaal:
-  maxSnelheidH = 310; #zelf te bepalen na testen [in rpm]
+  maxSnelheidH = 320; #zelf te bepalen na testen [in rpm]
   relatieveSnelheidH = 1; #zelf te bepalen na testen
-
   msPerGraadH = 1000/6 * (maxSnelheidH*relatieveSnelheidH)/255;
 
 
@@ -50,12 +49,11 @@ void setup(){
   maxSnelheidV = 310; #zelf te bepalen na testen [in rpm]
   relatieveSnelheidV = 1; #zelf te bepalen na testen
   msPerGraadV = 1000/6 * (maxSnelheidV*relatieveSnelheidV)/255;
-
 }
 
 void draaienH(richting){
   #richting: True = met de klok mee, False = tegen de klok in
-  tijdDraaienH = aantalGradenH*msPerGraadH;
+
   if (richting){
     digitalWrite(in1, HIGH);
     digitalWrite(in2, LOW);
@@ -66,44 +64,61 @@ void draaienH(richting){
   }
 
   analogWrite(motorHorizontaal, relatieveSnelheidH);
-  delay(tijdDraaienH);
-  analogWrite(motorHorizontaal, 0);
 }
 
 
 void draaienV(richting){
   #richting: True = met de klok mee, False = tegen de klok in
-  tijdDraaienV = aantalGradenV*msPerGraadV;
-  if (richting)  {
-    digitalWrite(in3, HIGH);
-    digitalWrite(in4, LOW);
-  }
-  else {
-    digitalWrite(in3, LOW);
-    digitalWrite(in4, HIGH);
-  }
-  analogWrite(motorVerticaal, relatieveSnelheidV);
-  delay(tijdDraaienV);
-  analogWrite(motorVerticaal, 0);
+
+      tijdDraaienV = aantalGradenV*msPerGraadV;
+      if (richting)  {
+        digitalWrite(in3, HIGH);
+        digitalWrite(in4, LOW);
+      }
+      else {
+        digitalWrite(in3, LOW);
+        digitalWrite(in4, HIGH);
+      }
+      analogWrite(motorVerticaal, relatieveSnelheidV);
+      delay(tijdDraaienV);
+      analogWrite(motorVerticaal, 0);
 }
-
+void correctieV(nieuweHoek){
+    correctieGraden = aantalGradenV - nieuweHoek;
+    if(correctieGraden <= 0){
+        digitalWrite(in3, LOW);
+        digitalWrite(in4, HIGH);
+        correctieGraden = - correctieGraden;
+    }
+    else{
+        digitalWrite(in3, HIGH);
+        digitalWrite(in4, LOW);
+    }
+    analogWrite(motorVerticaal, relatieveSnelheidV);
+    delay(correctieGraden*msPerGraadV);
+    analogWrite(motorVerticaal, 0);
+}
+void gevonden(){
+        analogWrite(motorHorizontaal, 0);
+        delay(1000); #tijd om te berekenen van aantalGradenV en tijdBlussen
+        draaienV(True);
+        delay(1000); #extra pauze uit voorzorg
+        digitalWrite(pomp, HIGH);
+        delay(500);
+        #nieuweHoek krijgen
+        correctieV(nieuweHoek);
+}
 void loop(){
-  #if éénmaal doorlopen wanneer alle 3 de gegevens zijn verkregen
-  if (tijdBlussen >= 0 and aantalGradenH >= 0 and aantalGradenV >= 0 ){
     draaienH(True);
-    draaienV(True);
+    if(aantalGradenH <= 0.5 and aantalGradenH >= -0.5){
 
-    delay(1000); #extra pauze uit voorzorg
+        gevonden();
+        if(stoppenPomp()){
+            digitalWrite(pomp, LOW);
+        }
 
-    digitalWrite(pomp, HIGH);
-    delay(tijdBlussen);
-    digitalWrite(pomp, LOW);
-
-    delay(1000); #extra pauze uit voorzorg
-
-    draaienH(False);
-    draaienV(False);
-
-    tijdBlussen = aantalGradenH = aantalGradenV = -1;
-  }
+        delay(1000); #extra pauze uit voorzorg
+        draaienV(False);
+        tijdBlussen = aantalGradenV = -1;
+    }
 }
