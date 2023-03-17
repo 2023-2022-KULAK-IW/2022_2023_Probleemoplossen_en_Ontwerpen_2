@@ -45,7 +45,10 @@ void setup(){
 
   msPerGraadH = 1000/6 * (maxSnelheidH*relatieveSnelheidH)/255;
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 
@@ -59,6 +62,7 @@ void setup(){
 
 void draaienH(richting){
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   //richting: True = met de klok mee, False = tegen de klok in
   tijdDraaienH = aantalGradenH*msPerGraadH;
 <<<<<<< HEAD
@@ -71,6 +75,10 @@ void draaienH(richting){
 >>>>>>> codeMotorPomp
 =======
 >>>>>>> parent of f0899c1... Revert "code aanpassingen voor de motoren, pomp  en berekeningen"
+=======
+  #richting: True = met de klok mee, False = tegen de klok in
+  tijdDraaienH = aantalGradenH*msPerGraadH;
+>>>>>>> Stashed changes
 =======
   #richting: True = met de klok mee, False = tegen de klok in
   tijdDraaienH = aantalGradenH*msPerGraadH;
@@ -92,6 +100,7 @@ void draaienH(richting){
 
 void draaienV(richting){
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   //richting: True = met de klok mee, False = tegen de klok in
   tijdDraaienV = aantalGradenV*msPerGraadV;
 <<<<<<< HEAD
@@ -104,6 +113,10 @@ void draaienV(richting){
 >>>>>>> codeMotorPomp
 =======
 >>>>>>> parent of f0899c1... Revert "code aanpassingen voor de motoren, pomp  en berekeningen"
+=======
+  #richting: True = met de klok mee, False = tegen de klok in
+  tijdDraaienV = aantalGradenV*msPerGraadV;
+>>>>>>> Stashed changes
 =======
   #richting: True = met de klok mee, False = tegen de klok in
   tijdDraaienV = aantalGradenV*msPerGraadV;

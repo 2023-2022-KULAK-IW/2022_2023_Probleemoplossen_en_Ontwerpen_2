@@ -3,6 +3,7 @@
 We hebben hiervoor de CYTRON 20A 6V-30V Dual DC Motor Driver (kostprijs = 150) nodig. We moeten ook de maximale snelheid van de motor nog weten.
 """
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 //https://dronebotworkshop.com/dc-motors-l298n-h-bridge/
 //https://arduinogetstarted.com/tutorials/arduino-controls-pump?utm_content=cmp-true
@@ -10,6 +11,10 @@ We hebben hiervoor de CYTRON 20A 6V-30V Dual DC Motor Driver (kostprijs = 150) n
 #https://dronebotworkshop.com/dc-motors-l298n-h-bridge/
 #https://arduinogetstarted.com/tutorials/arduino-controls-pump?utm_content=cmp-true
 >>>>>>> codeMotorPomp
+=======
+#https://dronebotworkshop.com/dc-motors-l298n-h-bridge/
+#https://arduinogetstarted.com/tutorials/arduino-controls-pump?utm_content=cmp-true
+>>>>>>> Stashed changes
 =======
 #https://dronebotworkshop.com/dc-motors-l298n-h-bridge/
 #https://arduinogetstarted.com/tutorials/arduino-controls-pump?utm_content=cmp-true
@@ -26,7 +31,13 @@ int in4 = 5;
 int pomp = 11;
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <<<<<<< HEAD
+=======
+"""
+gegevens nodig:
+"""
+>>>>>>> Stashed changes
 =======
 """
 gegevens nodig:
@@ -36,6 +47,7 @@ gegevens nodig:
 #verticaal:
 aantalGradenV = -1;#te krijgen van berekening na meting afstand en waterflow
 
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 //horizontaal
 float aantalGradenH = -50; //te krijgen van webcam
@@ -51,12 +63,17 @@ aantalGradenV = -1;#te krijgen van berekening na meting afstand en waterflow
 
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
 #horizontaal
 aantalGradenH = -50; #te krijgen van webcam
 #wachten:
 tijdBlussen = -1; #te krijgen na berekening na meting afstand en waterflow [ms]
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 >>>>>>> codeMotorPomp
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 
@@ -72,6 +89,7 @@ void setup(){
 
   pinMode(pomp, OUTPUT);
 
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< HEAD
   //horizontaal:
@@ -96,6 +114,8 @@ void draaienH(richting){
 <<<<<<< Updated upstream
   //richting: True = met de klok mee, False = tegen de klok in
 =======
+=======
+>>>>>>> Stashed changes
   #horizontaal:
   maxSnelheidH = 320; #zelf te bepalen na testen [in rpm]
   relatieveSnelheidH = 1; #zelf te bepalen na testen
@@ -110,9 +130,12 @@ void draaienH(richting){
 
 void draaienH(richting){
   #richting: True = met de klok mee, False = tegen de klok in
+<<<<<<< Updated upstream
 >>>>>>> codeMotorPomp
 =======
   #richting: True = met de klok mee, False = tegen de klok in
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 
   if (richting){
@@ -130,6 +153,7 @@ void draaienH(richting){
 
 void draaienV(richting){
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <<<<<<< HEAD
   //richting: True = met de klok mee, False = tegen de klok in
 
@@ -139,6 +163,11 @@ void draaienV(richting){
 
       tijdDraaienV = aantalGradenV*msPerGraadV;
 >>>>>>> codeMotorPomp
+=======
+  #richting: True = met de klok mee, False = tegen de klok in
+
+      tijdDraaienV = aantalGradenV*msPerGraadV;
+>>>>>>> Stashed changes
 =======
   #richting: True = met de klok mee, False = tegen de klok in
 
@@ -158,11 +187,15 @@ void draaienV(richting){
 }
 void correctieV(nieuweHoek){
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <<<<<<< HEAD
     float correctieGraden = aantalGradenV - nieuweHoek;
 =======
     correctieGraden = aantalGradenV - nieuweHoek;
 >>>>>>> codeMotorPomp
+=======
+    correctieGraden = aantalGradenV - nieuweHoek;
+>>>>>>> Stashed changes
 =======
     correctieGraden = aantalGradenV - nieuweHoek;
 >>>>>>> Stashed changes
@@ -182,8 +215,12 @@ void correctieV(nieuweHoek){
 void gevonden(){
         analogWrite(motorHorizontaal, 0);
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <<<<<<< HEAD
         delay(1000); //tijd om te berekenen van aantalGradenV en tijdBlussen
+=======
+        delay(1000); #tijd om te berekenen van aantalGradenV en tijdBlussen
+>>>>>>> Stashed changes
 =======
         delay(1000); #tijd om te berekenen van aantalGradenV en tijdBlussen
 >>>>>>> Stashed changes
@@ -197,6 +234,7 @@ void gevonden(){
 void loop(){
     draaienH(True);
     if(aantalGradenH <= 0.5 and aantalGradenH >= -0.5){
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
         float afstandBeker = 0 // te krijgen van webcam
         aantalGradenV = hoekV(3.95, afstandBeker);
@@ -217,10 +255,14 @@ void loop(){
 =======
 
 >>>>>>> Stashed changes
+=======
+
+>>>>>>> Stashed changes
         gevonden();
         if(stoppenPomp()){
             digitalWrite(pomp, LOW);
         }
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< HEAD
         delay(1000); //extra pauze uit voorzorg
@@ -231,6 +273,12 @@ void loop(){
         draaienV(False);
         tijdBlussen = aantalGradenV = -1;
 >>>>>>> codeMotorPomp
+=======
+
+        delay(1000); #extra pauze uit voorzorg
+        draaienV(False);
+        tijdBlussen = aantalGradenV = -1;
+>>>>>>> Stashed changes
 =======
 
         delay(1000); #extra pauze uit voorzorg
