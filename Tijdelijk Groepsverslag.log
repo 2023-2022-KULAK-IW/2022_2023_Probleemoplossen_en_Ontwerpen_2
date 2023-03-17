@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.9.28)  17 MAR 2023 17:10
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.9.28)  17 MAR 2023 15:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**"Groepsverslag P&O 2.tex"
-(./Groepsverslag P&O 2.tex
+**"Tijdelijk Groepsverslag.tex"
+(./Tijdelijk Groepsverslag.tex
 LaTeX2e <2022-06-01> patch level 5
 L3 programming layer <2022-08-30>
 (c:/texlive/texmf-local/tex/latex/local/LaTeX2022/kulak/kulakarticle.cls
@@ -652,32 +652,71 @@ Package babel Info: Making " an active character on input line 127.
 Package babel Info: Importing font and identification data for dutch
 (babel)             from babel-nl.ini. Reported on input line 11.
 )
+(c:/texlive/2022/texmf-dist/tex/latex/pdfpages/pdfpages.sty
+Package: pdfpages 2022/05/22 v0.5v Insert pages of external PDF documents (AM)
+
+(c:/texlive/2022/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
+)
+(c:/texlive/2022/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count307
+\calc@Bcount=\count308
+\calc@Adimen=\dimen279
+\calc@Bdimen=\dimen280
+\calc@Askip=\skip64
+\calc@Bskip=\skip65
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count309
+\calc@Cskip=\skip66
+)
+(c:/texlive/2022/texmf-dist/tex/latex/eso-pic/eso-pic.sty
+Package: eso-pic 2020/10/14 v3.0a eso-pic (RN)
+\ESO@tempdima=\dimen281
+\ESO@tempdimb=\dimen282
+)
+\AM@pagewidth=\dimen283
+\AM@pageheight=\dimen284
+\AM@fboxrule=\dimen285
+
+(c:/texlive/2022/texmf-dist/tex/latex/pdfpages/pppdftex.def
+File: pppdftex.def 2022/05/22 v0.5v Pdfpages driver for pdfTeX (AM)
+)
+\pdfpages@includegraphics@status=\count310
+\AM@pagebox=\box110
+\AM@global@opts=\toks30
+\AM@pagecnt=\count311
+\AM@toc@title=\toks31
+\c@AM@survey=\count312
+\AM@templatesizebox=\box111
+)
 (c:/texlive/2022/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2022-08-30 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count307
-\l__pdf_internal_box=\box110
+\l__color_backend_stack_int=\count313
+\l__pdf_internal_box=\box112
 )
-(./Groepsverslag P&O 2.aux)
-\openout1 = `"Groepsverslag P&O 2.aux"'.
+(./Tijdelijk Groepsverslag.aux)
+\openout1 = `"Tijdelijk Groepsverslag.aux"'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -713,37 +752,29 @@ LaTeX Font Info:    ... okay on input line 14.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring OFF on input line 14.
-(./Groepsverslag P&O 2.out) (./Groepsverslag P&O 2.out)
+Package hyperref Info: Link coloring OFF on input line 16.
+(./Tijdelijk Groepsverslag.out) (./Tijdelijk Groepsverslag.out)
 \@outlinefile=\write4
-\openout4 = `"Groepsverslag P&O 2.out"'.
+\openout4 = `"Tijdelijk Groepsverslag.out"'.
 
 
 (c:/texlive/2022/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count308
-\scratchdimen=\dimen279
-\scratchbox=\box111
-\nofMPsegments=\count309
-\nofMParguments=\count310
-\everyMPshowfont=\toks30
-\MPscratchCnt=\count311
-\MPscratchDim=\dimen280
-\MPnumerator=\count312
-\makeMPintoPDFobject=\count313
-\everyMPtoPDFconversion=\toks31
+\scratchcounter=\count314
+\scratchdimen=\dimen286
+\scratchbox=\box113
+\nofMPsegments=\count315
+\nofMParguments=\count316
+\everyMPshowfont=\toks32
+\MPscratchCnt=\count317
+\MPscratchDim=\dimen287
+\MPnumerator=\count318
+\makeMPintoPDFobject=\count319
+\everyMPtoPDFconversion=\toks33
 ) (c:/texlive/2022/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
-
-(c:/texlive/2022/texmf-dist/tex/latex/grfext/grfext.sty
-Package: grfext 2019/12/03 v1.3 Manage graphics extensions (HO)
-)
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 85.
-Package grfext Info: Graphics extension search list:
-(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
-G,.JBIG2,.JB2,.eps]
-(grfext)             \AppendGraphicsExtensions on input line 504.
 
 (c:/texlive/2022/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
@@ -751,33 +782,79 @@ e
 ))
 Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             https://www.ctan.org/pkg/pageslts
-(lastpage)             ! on input line 14.
-<kulakLogo.pdf, id=115, 245.83241pt x 51.21533pt>
+(lastpage)             ! on input line 16.
+
+(c:/texlive/2022/texmf-dist/tex/latex/pdflscape/pdflscape.sty
+Package: pdflscape 2019/12/05 v0.12 Display of landscape pages in PDF (HO)
+
+(c:/texlive/2022/texmf-dist/tex/latex/graphics/lscape.sty
+Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
+)
+Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
+)
+<kulakLogo.pdf, id=59, 245.83241pt x 51.21533pt>
 File: kulakLogo.pdf Graphic file (type pdf)
 <use kulakLogo.pdf>
-Package pdftex.def Info: kulakLogo.pdf  used on input line 16.
+Package pdftex.def Info: kulakLogo.pdf  used on input line 18.
 (pdftex.def)             Requested size: 204.85858pt x 42.67912pt.
-<kuleuvenSedes.pdf, id=116, 349.305pt x 596.2275pt>
+<kuleuvenSedes.pdf, id=60, 349.305pt x 596.2275pt>
 File: kuleuvenSedes.pdf Graphic file (type pdf)
 <use kuleuvenSedes.pdf>
-Package pdftex.def Info: kuleuvenSedes.pdf  used on input line 16.
+Package pdftex.def Info: kuleuvenSedes.pdf  used on input line 18.
 (pdftex.def)             Requested size: 25.00282pt x 42.67912pt.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 16.
+(Font)              <8> on input line 18.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 16.
+(Font)              <6> on input line 18.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 16.
+(Font)              <5> on input line 18.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 16.
+(Font)              <7> on input line 18.
 
-Underfull \hbox (badness 10000) in paragraph at lines 16--17
+Underfull \hbox (badness 10000) in paragraph at lines 18--19
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 39--48
+Underfull \hbox (badness 10000) in paragraph at lines 22--23
 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 29--30
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 31--32
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 35--43
+
+ []
+
+<schematische voorstelling water LATEX.png, id=61, 600.74437pt x 163.3603pt>
+File: schematische voorstelling water LATEX.png Graphic file (type png)
+<use schematische voorstelling water LATEX.png>
+Package pdftex.def Info: schematische voorstelling water LATEX.png  used on inp
+ut line 49.
+(pdftex.def)             Requested size: 455.24408pt x 123.79866pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<schematische voorstelling bestrijkingsgebied LATEX.png, id=64, 592.46344pt x 3
+12.41719pt>
+File: schematische voorstelling bestrijkingsgebied LATEX.png Graphic file (type
+ png)
+<use schematische voorstelling bestrijkingsgebied LATEX.png>
+Package pdftex.def Info: schematische voorstelling bestrijkingsgebied LATEX.png
+  used on input line 57.
+(pdftex.def)             Requested size: 592.46199pt x 312.41641pt.
+
+Overfull \hbox (137.21791pt too wide) in paragraph at lines 57--58
+ [][] 
  []
 
 [1
@@ -785,13 +862,44 @@ Underfull \hbox (badness 10000) in paragraph at lines 39--48
 {c:/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <c:/texlive/texm
 f-local/tex/latex/local/LaTeX2022/kulak/kulakLogo.pdf> <c:/texlive/texmf-local/
 tex/latex/local/LaTeX2022/kulak/kuleuvenSedes.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 55--73
 
- []
+pdfTeX warning: pdflatex.exe (file ./taakstructuur_LATEX_2.pdf): PDF inclusion:
+ found PDF version <1.7>, but at most version <1.5> allowed
+<taakstructuur_LATEX_2.pdf, id=88, 597.55246pt x 845.07724pt>
+File: taakstructuur_LATEX_2.pdf Graphic file (type pdf)
+<use taakstructuur_LATEX_2.pdf>
+Package pdftex.def Info: taakstructuur_LATEX_2.pdf  used on input line 68.
+(pdftex.def)             Requested size: 597.551pt x 845.07518pt.
 
+
+pdfTeX warning: pdflatex.exe (file ./taakstructuur_LATEX_2.pdf): PDF inclusion:
+ found PDF version <1.7>, but at most version <1.5> allowed
+File: taakstructuur_LATEX_2.pdf Graphic file (type pdf)
+<use taakstructuur_LATEX_2.pdf>
+Package pdftex.def Info: taakstructuur_LATEX_2.pdf  used on input line 68.
+(pdftex.def)             Requested size: 597.551pt x 845.07518pt.
+
+
+pdfTeX warning: pdflatex.exe (file ./taakstructuur_LATEX_2.pdf): PDF inclusion:
+ found PDF version <1.7>, but at most version <1.5> allowed
+
+
+pdfTeX warning: pdflatex.exe (file ./taakstructuur_LATEX_2.pdf): PDF inclusion:
+ found PDF version <1.7>, but at most version <1.5> allowed
+<taakstructuur_LATEX_2.pdf, id=91, page=1, 597.55246pt x 845.07724pt>
+File: taakstructuur_LATEX_2.pdf Graphic file (type pdf)
+<use taakstructuur_LATEX_2.pdf, page 1>
+Package pdftex.def Info: taakstructuur_LATEX_2.pdf , page1 used on input line 6
+8.
+(pdftex.def)             Requested size: 597.551pt x 845.07518pt.
+File: taakstructuur_LATEX_2.pdf Graphic file (type pdf)
+<use taakstructuur_LATEX_2.pdf, page 1>
+Package pdftex.def Info: taakstructuur_LATEX_2.pdf , page1 used on input line 6
+8.
+(pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
 File: kuleuvenSedes.pdf Graphic file (type pdf)
 <use kuleuvenSedes.pdf>
-Package pdftex.def Info: kuleuvenSedes.pdf  used on input line 120.
+Package pdftex.def Info: kuleuvenSedes.pdf  used on input line 68.
 (pdftex.def)             Requested size: 25.00282pt x 42.67912pt.
 
 Package fancyhdr Warning: \headheight is too small (42.67912pt): 
@@ -801,11 +909,33 @@ Package fancyhdr Warning: \headheight is too small (42.67912pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-3.60002pt}.
 
-[2] (./Groepsverslag P&O 2.bbl) 
+[2]
+File: taakstructuur_LATEX_2.pdf Graphic file (type pdf)
+<use taakstructuur_LATEX_2.pdf, page 1>
+Package pdftex.def Info: taakstructuur_LATEX_2.pdf , page1 used on input line 6
+8.
+(pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
+File: taakstructuur_LATEX_2.pdf Graphic file (type pdf)
+<use taakstructuur_LATEX_2.pdf, page 1>
+Package pdftex.def Info: taakstructuur_LATEX_2.pdf , page1 used on input line 6
+8.
+(pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
+File: taakstructuur_LATEX_2.pdf Graphic file (type pdf)
+<use taakstructuur_LATEX_2.pdf, page 1>
+Package pdftex.def Info: taakstructuur_LATEX_2.pdf , page1 used on input line 6
+8.
+(pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
+ [3 <./taakstructuur_LATEX_2.pdf>]
+<ganttchart_LATEX.png, id=119, 1265.47781pt x 382.42876pt>
+File: ganttchart_LATEX.png Graphic file (type png)
+<use ganttchart_LATEX.png>
+Package pdftex.def Info: ganttchart_LATEX.png  used on input line 71.
+(pdftex.def)             Requested size: 660.10252pt x 199.48848pt.
+ 
 AED: lastpage setting LastPage
 File: kuleuvenSedes.pdf Graphic file (type pdf)
 <use kuleuvenSedes.pdf>
-Package pdftex.def Info: kuleuvenSedes.pdf  used on input line 165.
+Package pdftex.def Info: kuleuvenSedes.pdf  used on input line 82.
 (pdftex.def)             Requested size: 25.00282pt x 42.67912pt.
 
 Package fancyhdr Warning: \headheight is too small (42.67912pt): 
@@ -815,30 +945,60 @@ Package fancyhdr Warning: \headheight is too small (42.67912pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-3.60002pt}.
 
-[3] (./Groepsverslag P&O 2.aux)
-Package rerunfilecheck Info: File `"Groepsverslag P&O 2".out' has not changed.
-(rerunfilecheck)             Checksum: 93FED03E8655488DD08283055D11A85C;2630.
+[4 <./schematische voorstelling water LATEX.png>]
+File: kuleuvenSedes.pdf Graphic file (type pdf)
+<use kuleuvenSedes.pdf>
+Package pdftex.def Info: kuleuvenSedes.pdf  used on input line 82.
+(pdftex.def)             Requested size: 25.00282pt x 42.67912pt.
+
+
+Package fancyhdr Warning: \headheight is too small (42.67912pt): 
+(fancyhdr)                Make it at least 46.27914pt, for example:
+(fancyhdr)                \setlength{\headheight}{46.27914pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-3.60002pt}.
+
+[5 <./schematische voorstelling bestrijkingsgebied LATEX.png>]
+File: kuleuvenSedes.pdf Graphic file (type pdf)
+<use kuleuvenSedes.pdf>
+Package pdftex.def Info: kuleuvenSedes.pdf  used on input line 82.
+(pdftex.def)             Requested size: 25.00282pt x 42.67912pt.
+
+
+Package fancyhdr Warning: \headheight is too small (42.67912pt): 
+(fancyhdr)                Make it at least 46.27914pt, for example:
+(fancyhdr)                \setlength{\headheight}{46.27914pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-3.60002pt}.
+
+[6 <./ganttchart_LATEX.png>] (./Tijdelijk Groepsverslag.aux)
+Package rerunfilecheck Info: File `"Tijdelijk Groepsverslag".out' has not chang
+ed.
+(rerunfilecheck)             Checksum: 5DA5177D36AC616272E2933F67DF6DA3;613.
  ) 
 Here is how much of TeX's memory you used:
- 22116 strings out of 475075
- 430004 string characters out of 5783001
- 764187 words of memory out of 5000000
- 43106 multiletter control sequences out of 15000+600000
- 476803 words of font info for 42 fonts, out of 8000000 for 9000
+ 22941 strings out of 475075
+ 445224 string characters out of 5783001
+ 780250 words of memory out of 5000000
+ 43917 multiletter control sequences out of 15000+600000
+ 477244 words of font info for 42 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,18n,94p,597b,1061s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{c:/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}{c:/tex
-live/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}<c:/texlive/2022/
-texmf-dist/fonts/type1/public/cm-super/sfbx0800.pfb><c:/texlive/2022/texmf-dist
-/fonts/type1/public/cm-super/sfbx1200.pfb><c:/texlive/2022/texmf-dist/fonts/typ
-e1/public/cm-super/sfbx1440.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/
-cm-super/sfrm0800.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/cm-super/s
-frm1000.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pf
-b>
-Output written on "Groepsverslag P&O 2.pdf" (3 pages, 296011 bytes).
+ 99i,18n,94p,816b,1061s stack positions out of 10000i,1000n,20000p,200000b,200000s
+{c:/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}<c:/texl
+ive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2022/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2022/texmf-dist
+/fonts/type1/public/cm-super/sfbx0800.pfb><c:/texlive/2022/texmf-dist/fonts/typ
+e1/public/cm-super/sfbx1000.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/
+cm-super/sfbx1200.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/cm-super/s
+fbx1440.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pf
+b><c:/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb><c:/texl
+ive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
+Output written on "Tijdelijk Groepsverslag.pdf" (6 pages, 861595 bytes).
 PDF statistics:
- 187 PDF objects out of 1000 (max. 8388607)
- 148 compressed objects within 2 object streams
- 27 named destinations out of 1000 (max. 500000)
- 287 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 185 PDF objects out of 1000 (max. 8388607)
+ 124 compressed objects within 2 object streams
+ 18 named destinations out of 1000 (max. 500000)
+ 210 words of extra memory for PDF output out of 10000 (max. 10000000)
 
