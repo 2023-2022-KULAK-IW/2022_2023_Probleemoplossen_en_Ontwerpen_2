@@ -54,9 +54,9 @@ void setup(){
 }
 
 void draaienH(richting){
-<<<<<<< HEAD
   //richting: True = met de klok mee, False = tegen de klok in
   tijdDraaienH = aantalGradenH*msPerGraadH;
+<<<<<<< HEAD
 =======
   #richting: True = met de klok mee, False = tegen de klok in
 <<<<<<< HEAD
@@ -64,6 +64,8 @@ void draaienH(richting){
 =======
   tijdDraaienH = aantalGradenH*msPerGraadH;
 >>>>>>> codeMotorPomp
+=======
+>>>>>>> parent of f0899c1... Revert "code aanpassingen voor de motoren, pomp  en berekeningen"
   if (richting){
     digitalWrite(in1, HIGH);
     digitalWrite(in2, LOW);
@@ -80,9 +82,9 @@ void draaienH(richting){
 
 
 void draaienV(richting){
-<<<<<<< HEAD
   //richting: True = met de klok mee, False = tegen de klok in
   tijdDraaienV = aantalGradenV*msPerGraadV;
+<<<<<<< HEAD
 =======
   #richting: True = met de klok mee, False = tegen de klok in
 <<<<<<< HEAD
@@ -90,6 +92,8 @@ void draaienV(richting){
 =======
   tijdDraaienV = aantalGradenV*msPerGraadV;
 >>>>>>> codeMotorPomp
+=======
+>>>>>>> parent of f0899c1... Revert "code aanpassingen voor de motoren, pomp  en berekeningen"
   if (richting)  {
     digitalWrite(in3, HIGH);
     digitalWrite(in4, LOW);

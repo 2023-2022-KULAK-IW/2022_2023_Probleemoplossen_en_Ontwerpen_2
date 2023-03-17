@@ -6,6 +6,9 @@ input:
 """
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of f0899c1... Revert "code aanpassingen voor de motoren, pomp  en berekeningen"
 waterDebiet = 3.95  # l/min (3.95 is standaardwaarde), komt van waterflowsensor
 afstandBeker = 10  # komt van webcam
 volumeGepasseerd = 0  # ml, komt van waterflowsensor
@@ -50,6 +53,7 @@ def stoppenPomp(volumeGepasseerd):
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 waterDebiet = 240 #l/h (240 is standaardwaarde), komt van waterflowsensor
 afstandBeker = 10.44 #komt van webcam
@@ -57,6 +61,8 @@ volumeGepasseerd = 0 #ml, komt van waterflowsensor
 >>>>>>> parent of 1934931... code aanpassingen voor de motoren, pomp  en berekeningen
 =======
 >>>>>>> codeMotorPomp
+=======
+>>>>>>> parent of f0899c1... Revert "code aanpassingen voor de motoren, pomp  en berekeningen"
 
 
 
