@@ -3,33 +3,29 @@
 We hebben hiervoor de CYTRON 20A 6V-30V Dual DC Motor Driver (kostprijs = 150) nodig. We moeten ook de maximale snelheid van de motor nog weten.
 """
 #https://dronebotworkshop.com/dc-motors-l298n-h-bridge/
+#https://arduinogetstarted.com/tutorials/arduino-controls-pump?utm_content=cmp-true
 
 int motorHorizontaal = 9;
 int in1 = 8;
 int in2 = 7;
 
-int motorVerticaal = 10
-int in3 = 6
-int in4 = 5
+int motorVerticaal = 10;
+int in3 = 6;
+int in4 = 5;
 
+int pomp = 11;
+
+"""
+gegevens nodig:
+"""
 #horizontaal:
-maxSnelheidH = 310 #nog niet bekend [in rpm]
-aantalGradenH = 0 #te krijgen van webcam
-
-relatieveSnelheidH = 1 #zelf te bepalen na testen
-msPerGraadH = 1000/6 * (maxSnelheidH*relatieveSnelheidH)/255
-tijdDraaienH = aantalGradenH*msPerGraadH
+aantalGradenH = -1; #te krijgen van webcam
 
 #verticaal:
-maxSnelheidV = 310 #nog niet bekend [in rpm]
-aantalGradenV = 0 #te krijgen van berekening na meting afstand en waterflow
-
-relatieveSnelheidV = 1 #zelf te bepalen na testen
-msPerGraadV = 1000/6 * (maxSnelheidV*relatieveSnelheidV)/255
-tijdDraaienV = aantalGradenV*msPerGraadV
+aantalGradenV = -1;#te krijgen van berekening na meting afstand en waterflow
 
 #wachten:
-tijdBlussen = 0 #te krijgen na berekening na meting afstand en waterflow [ms]
+tijdBlussen = -1; #te krijgen na berekening na meting afstand en waterflow [ms]
 
 
 void setup(){
@@ -40,6 +36,21 @@ void setup(){
   pinMode(motorVerticaal, OUTPUT);
   pinMode(in3, OUTPUT);
   pinMode(in4, OUTPUT);
+
+  pinMode(pomp, OUTPUT);
+
+  #horizontaal:
+  maxSnelheidH = 310; #zelf te bepalen na testen [in rpm]
+  relatieveSnelheidH = 1; #zelf te bepalen na testen
+
+  msPerGraadH = 1000/6 * (maxSnelheidH*relatieveSnelheidH)/255;
+  tijdDraaienH = aantalGradenH*msPerGraadH;
+
+  #verticaal:
+  maxSnelheidV = 310; #zelf te bepalen na testen [in rpm]
+  relatieveSnelheidV = 1; #zelf te bepalen na testen
+  msPerGraadV = 1000/6 * (maxSnelheidV*relatieveSnelheidV)/255;
+  tijdDraaienV = aantalGradenV*msPerGraadV;
 }
 
 void draaienH(richting){
@@ -75,14 +86,22 @@ void draaienV(richting){
 }
 
 void loop(){
-  if (tijdBlussen != 0){
+  #if éénmaal doorlopen wanneer alle 3 de gegevens zijn verkregen
+  if (tijdBlussen >= 0 and aantalGradenH >= 0 and aantalGradenV >= 0 ){
     draaienH(True);
     draaienV(True);
 
+    delay(1000); #extra pauze uit voorzorg
+
+    digitalWrite(pomp, HIGH);
     delay(tijdBlussen);
+    digitalWrite(pomp, LOW);
+
+    delay(1000); #extra pauze uit voorzorg
 
     draaienH(False);
     draaienV(False);
+
+    tijdBlussen = aantalGradenH = aantalGradenV = -1;
   }
 }
-
