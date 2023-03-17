@@ -44,18 +44,22 @@ void setup(){
   relatieveSnelheidH = 1; //zelf te bepalen na testen
 
   msPerGraadH = 1000/6 * (maxSnelheidH*relatieveSnelheidH)/255;
-
+  tijdDraaienH = aantalGradenH*msPerGraadH;
 
   //verticaal:
   maxSnelheidV = 310; //zelf te bepalen na testen [in rpm]
   relatieveSnelheidV = 1; //zelf te bepalen na testen
   msPerGraadV = 1000/6 * (maxSnelheidV*relatieveSnelheidV)/255;
-
+  tijdDraaienV = aantalGradenV*msPerGraadV;
 }
 
 void draaienH(richting){
+<<<<<<< HEAD
   //richting: True = met de klok mee, False = tegen de klok in
   tijdDraaienH = aantalGradenH*msPerGraadH;
+=======
+  #richting: True = met de klok mee, False = tegen de klok in
+>>>>>>> parent of 1934931... code aanpassingen voor de motoren, pomp  en berekeningen
   if (richting){
     digitalWrite(in1, HIGH);
     digitalWrite(in2, LOW);
@@ -72,8 +76,12 @@ void draaienH(richting){
 
 
 void draaienV(richting){
+<<<<<<< HEAD
   //richting: True = met de klok mee, False = tegen de klok in
   tijdDraaienV = aantalGradenV*msPerGraadV;
+=======
+  #richting: True = met de klok mee, False = tegen de klok in
+>>>>>>> parent of 1934931... code aanpassingen voor de motoren, pomp  en berekeningen
   if (richting)  {
     digitalWrite(in3, HIGH);
     digitalWrite(in4, LOW);
