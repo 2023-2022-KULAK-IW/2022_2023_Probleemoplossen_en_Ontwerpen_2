@@ -1,3 +1,11 @@
+/*
+Liquid flow rate sensor -DIYhacking.com Arvind Sanjeev
+
+Measure the liquid/water flow rate using this code. 
+Connect Vcc and Gnd of sensor to arduino, and the 
+signal line to arduino digital pin 2.
+ 
+ */
 
 byte statusLed    = 13;
 
@@ -6,13 +14,13 @@ byte sensorPin       = 2;
 
 // The hall-effect flow sensor outputs approximately 4.5 pulses per second per
 // litre/minute of flow.
-float aantalPulsen = 4.5;
+float calibrationFactor = 4.5;
 
 volatile byte pulseCount;  
 
 float flowRate;
-unsigned int flowMilliliters;
-unsigned long totaalMilliliters;
+unsigned int flowMilliLitres;
+unsigned long totalMilliLitres;
 
 unsigned long oldTime;
 
@@ -31,8 +39,8 @@ void setup()
 
   pulseCount        = 0;
   flowRate          = 0.0;
-  flowMilliliters   = 0;
-  totaalMilliliters  = 0;
+  flowMilliLitres   = 0;
+  totalMilliLitres  = 0;
   oldTime           = 0;
 
   // The Hall-effect sensor is connected to pin 2 which uses interrupt 0.
@@ -55,10 +63,10 @@ void loop()
         
     // Because this loop may not complete in exactly 1 second intervals we calculate
     // the number of milliseconds that have passed since the last execution and use
-    // that to scale the output. We also apply the aantalPulsen to scale the output
+    // that to scale the output. We also apply the calibrationFactor to scale the output
     // based on the number of pulses per second per units of measure (litres/minute in
     // this case) coming from the sensor.
-    flowRate = ((1000.0 / (millis() - oldTime)) * pulseCount) / aantalPulsen;
+    flowRate = ((1000.0 / (millis() - oldTime)) * pulseCount) / calibrationFactor;
     
     // Note the time this processing pass was executed. Note that because we've
     // disabled interrupts the millis() function won't actually be incrementing right
@@ -68,15 +76,28 @@ void loop()
     
     // Divide the flow rate in litres/minute by 60 to determine how many litres have
     // passed through the sensor in this 1 second interval, then multiply by 1000 to
-    // convert to Milliliters.
-    flowMilliliters = (flowRate / 60) * 1000;
+    // convert to millilitres.
+    flowMilliLitres = (flowRate / 60) * 1000;
     
-    // Add the Milliliters passed in this second to the cumulative totaal
-    totaalMilliliters += flowMilliliters;
+    // Add the millilitres passed in this second to the cumulative total
+    totalMilliLitres += flowMilliLitres;
       
     unsigned int frac;
-    Serial.print(flowRate,totaalMilliliters)
-    return flowRate, totaalMilliliters
+    
+    // Print the flow rate for this second in litres / minute
+    Serial.print("Flow rate: ");
+    Serial.print(int(flowRate));  // Print the integer part of the variable
+    Serial.print("L/min");
+    Serial.print("\t"); 		  // Print tab space
+
+    // Print the cumulative total of litres flowed since starting
+    Serial.print("Output Liquid Quantity: ");        
+    Serial.print(totalMilliLitres);
+    Serial.println("mL"); 
+    Serial.print("\t"); 		  // Print tab space
+	Serial.print(totalMilliLitres/1000);
+	Serial.print("L");
+    
 
     // Reset the pulse counter so we can start incrementing again
     pulseCount = 0;
@@ -86,7 +107,9 @@ void loop()
   }
 }
 
-
+/*
+Insterrupt Service Routine
+ */
 void pulseCounter()
 {
   // Increment the pulse counter
