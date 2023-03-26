@@ -12,7 +12,7 @@ volumeGepasseerd = 0  # ml, komt van waterflowsensor
 def hoekV(waterDebiet, afstandBeker):
 
     straal = 0.0029
-    hoogteDoos = 1
+    hoogteDoos = 0.5
     lengteArm = 0.48
     l0 = 0.02  # lengte tussen beginpunt arm en camera
 
@@ -23,10 +23,10 @@ def hoekV(waterDebiet, afstandBeker):
         return [-afstandBeker + np.cos(a[0]) * snelheid * a[1] + np.cos(a[0]) * lengteArm - l0,
                 -hoogteBeker + hoogteDoos + np.sin(a[0]) * lengteArm + np.sin(a[0]) * snelheid * a[1] - 1 / 2 * 9.81 * (a[1]**2)]
 
-    opl = fsolve(func, [np.pi/2, 10])
-    opl[0] = opl[0] * 180 / np.pi
-    #opl[0]: hoek (in graden)
-    return opl[0]
+        opl = fsolve(func, [np.pi/2, 10])
+        opl[0] = opl[0] * 180 / np.pi
+        #opl[0]: hoek (in graden)
+        return opl[0]
 
 
 def stoppenPomp(volumeGepasseerd):
