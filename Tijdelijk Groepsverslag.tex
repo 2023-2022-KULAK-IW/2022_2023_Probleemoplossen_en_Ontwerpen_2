@@ -39,7 +39,7 @@ Als de arm juist gericht staat, is het enige dat overblijft het blussen van de b
 
 \section{Berekeningen}
 \subsection{Water}
-
+\subsubsection{Afstand}
 De afstand zoals te zien in afbeelding \ref{schematische voorstelling} tussen het brandblusapparaat en de cilinder is \(x\) waarbij \(x\) maximaal gelijk kan zijn aan \(10,45 m\). Om deze afstand te halen berekenen we de hoek waaronder het water moet worden weggespoten. De hoogte van het platform is hier \(h_1\) en de hoogte van de arm is \(h_2 = lsin(\theta)\) met \(l\) de lengte van de arm. \(y\) is de hoogte van de cilinder die moet worden opgevuld. Dan krijgen we:
 \begin{equation}
 	\begin{cases}
@@ -54,6 +54,26 @@ Bij het gebruik van de brandblusser zullen we met behulp van de camera \(x\) al 
 	\caption{Schematische voorstelling van de opstelling}
 	\label{schematische voorstelling}
 \end{figure}
+
+\subsubsection{Waterstraal}
+		De functie \verb*|hoekV(waterDebiet,afstandBeker)| berekent de hoek \(\theta\)  die nodig is tussen het platform en de arm. Deze functie heeft daarvoor het waterdebiet, in \(l/min\), nodig en de verticale afstand, in \(m\), tot het doelwit. Het waterdebiet wordt meegegeven door de waterflowsensor en de afstand door de webcam. Er worden ook niet-variabele parameters gebruikt die op voorhand zijn vastgelegd, zoals de straal van het spuitgat, de hoogte van het platform, de lengte van de arm, de hoogte van het doelwit en de afstand tussen het beginpunt van de arm en de camera. 
+
+In deze functie wordt dan de snelheid van het water berekend en dat wordt dan in stelsel gebruikt met twee vergelijkingen. Dit stelsel wordt, met gebruik van de scipy-package, opgelost naar de hoek \(\theta\) en de tijd \(t\).
+
+\begin{equation}
+	\begin{cases}
+		afstandBeker  = cos(\theta )*lengteArm - afstandCamera + cos(\theta )*snelheid*t \\ 
+		hoogteBeker  =  hoogtePlatform + sin(\theta )*lengteArm + sin(\theta )*snelheid*t - 1/2*9.81*t^2
+	\end{cases}\,.
+\end{equation}
+
+De hoek \(\theta\) wordt omgezet van radialen naar graden en is dan de output van deze functie en kan dan gebruikt worden voor één van de motoren.
+
+\begin{figure} [!h]
+	\includegraphics[width = 0.4 \textwidth]{flowchart_hoekV}
+	\caption{Flowchart }
+\end{figure}
+
 
 
 \subsection{Camera}

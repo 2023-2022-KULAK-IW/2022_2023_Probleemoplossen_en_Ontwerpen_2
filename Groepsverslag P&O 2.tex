@@ -1,6 +1,7 @@
 \documentclass[kulak]{kulakarticle} % options: kulak (default) or kul
 
 \usepackage[dutch]{babel}
+\usepackage{amsmath}
 
 \title{Smart Fire Extinguisher}
 \author{TEAM 6: Anna-Laura, Emile, Jérôme, Jesse}
@@ -113,10 +114,19 @@
 	
 	
 	\subsection{Python}
-	
-	tekst
-	
-	
+	\subsubsection{hoekV}
+		De functie \verb*|hoekV(waterDebiet,afstandBeker)| berekent de hoek \(\theta\)  die nodig is tussen het platform en de arm. Deze functie heeft daarvoor het waterdebiet, in \(l/min\), nodig en de verticale afstand, in \(m\), tot het doelwit. Het waterdebiet wordt meegegeven door de waterflowsensor en de afstand door de webcam. Er worden ook niet-variabele parameters gebruikt die op voorhand zijn vastgelegd, zoals de straal van het spuitgat, de hoogte van het platform, de lengte van de arm, de hoogte van het doelwit en de afstand tussen het beginpunt van de arm en de camera. 
+		
+		In deze functie wordt dan de snelheid van het water berekend en dat wordt dan in stelsel gebruikt met twee vergelijkingen. Dit stelsel wordt, met gebruik van de scipy-package, opgelost naar de hoek \(\theta\) en de tijd \(t\).
+		
+		\begin{equation}
+			\begin{cases}
+			afstandBeker  = cos(\theta )*lengteArm - afstandCamera + cos(\theta )*snelheid*t \\ 
+			hoogteBeker  =  hoogtePlatform + sin(\theta )*lengteArm + sin(\theta )*snelheid*t - 1/2*9.81*t^2
+			\end{cases}\,.
+		\end{equation}
+		
+		De hoek \(\theta\) wordt omgezet van radialen naar graden en is dan de output van deze functie en kan dan gebruikt worden voor één van de motoren.
 	\subsection{Arduino}
 	
 	tekst
