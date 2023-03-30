@@ -45,25 +45,28 @@ Alles moet automatisch werken, maar er moet ook een manuele override zijn waarbi
 	\item Branden detecteren en blussen in een rechthoek van 7m x 6m op 3m afstand 
 	\item Maximale uitwijking horizontaal: 90°  
 	\item Maximale uitwijking verticaal: 90°
-	\item Minimale spuitdruk: … 
+	\item Minimale spuitdruk: … %aanvullen%
 	\item Hoeveelheid water per blussing: (wordt nog bekend gemaakt, foutenmarge nog inrekenen) 
 	\item Hoeveelheid beschikbaar water: 10L 
 	\item Elektronica afgeschermd van water 
 	\item Massa robot: max. 20 kg
+	\item Besturing via laptop
+	\item Automatische werking
 \end{itemize}
 
 \subsection{Ontwerp}
-We opteren voor een \textbf{stationair brandblusplatform} dat gebruik maakt van een draaiend platform en een arm om het water in de juiste richting en onder de juiste hoek weg te spuiten. Water uit een waterreservoir zal dan met behulp van een pomp op de gewenste plaats terecht komen. De plaats zal zijn vastgesteld door een camera. Deze detecteert de brand en aan de hand van de beelden zal er berekend worden waar en hoe ver de brand zich bevindt ten opzichte van het brandblusplatform. Daarna zullen nog een hoop berekeningen de hoek van de twee armen bepalen. \\
+We opteren voor een \textbf{stationair brandblusplatform} dat gebruik maakt van een draaiend platform en een arm om het water in de juiste richting en onder de juiste hoek weg te spuiten. Water uit een waterreservoir zal dan met behulp van een pomp op de gewenste plaats terecht komen. De plaats zal zijn vastgesteld door een camera. Deze detecteert de brand en aan de hand van de beelden zal er berekend worden waar en hoe ver de brand zich bevindt ten opzichte van het brandblusplatform. Daarna zullen nog een hoop berekeningen de hoek van de arm bepalen. \\
 
-Voor \textbf{de detectie} van de brand maken we gebruik van een webcam (USB Webcam 1080P), in Python wordt een programma geschreven op een laptop die aan branddetectie en -localisatie doet. De camera is vastgemaakt op het roterend platform. \\
+Voor de \textbf{detectie} van de brand maken we gebruik van een webcam (USB Webcam 1080P), in Python wordt een programma geschreven op een laptop die aan branddetectie en -localisatie doet. De camera is vastgemaakt op het roterend platform. \\
 
-\textbf{Het richten} van het draaiend platform en de arm gebeurt met behulp van twee motoren (Micro Metal Gear Motor 100:1 HP), deze zullen dankzij een motor driver met de gewenste snelheid en in de juiste richting draaien. Volgens de berekeningen gedaan door een laptop en webcam zullen de armen juist geposisioneerd worden. \\
+Het \textbf{richten} van het draaiend platform en de arm gebeurt met behulp van twee motoren (Micro Metal Gear Motor 100:1 HP), deze zullen dankzij een motor driver met de gewenste snelheid en in de juiste richting draaien. Volgens de berekeningen gedaan door een laptop en webcam zullen de armen juist gepositioneerd worden. De motoren worden bestuurd door een microcontroller (Arduino nano 33 iot). \\
 
-Wanneer de arm correct gericht is, is de laatste stap \textbf{het blussen} van de brand. Hiervoor zal de pomp (Membraanpomp 12V 4.8 bar) water uit het waterreservoir (jerrycan 10L) door een slang (met diameter 10mm) pompen, om zo weggespoten te worden richting het doelwit. De benodigde afstand halen om het volledige bestrijkingsgebied te kunnen bestrijken is mogelijk door het aanpassen van het mondstuk.\\
+Wanneer de arm correct gericht is, is de laatste stap het \textbf{blussen} van de brand. Hiervoor zal de pomp (Membraanpomp 12V 4.8 bar) water uit het waterreservoir (jerrycan 10L) door een slang (met diameter 10mm) pompen, om zo weggespoten te worden richting het doelwit. De benodigde afstand halen om het volledige bestrijkingsgebied te kunnen bestrijken is mogelijk door het aanpassen van het mondstuk.\\
+%moet er in nog meer detail beschreven worden welke materialen we gebruiken en voor wat??
 
 \begin{figure} [!h]
 	\centering
-	\includegraphics[width = .75 \textwidth]{Solid Edge Assembly foto}
+	\includegraphics[width = .6 \textwidth]{Solid Edge Assembly foto}
 	\caption{Ontwerp in Solid Edge}
 	\label{ontwerp}
 \end{figure}
@@ -178,7 +181,7 @@ We benutten beide methoden en nemen het gemiddelde van de twee uitkomsten voor \
 
 
 \section{Planning}
-Op de pagina hieronder is onze taakstructuur te vinden. De eerste taak, het verkennen van de opdracht, is al voltooid. Ons CAD model is bijna af en we zijn al begonnen met het coderen van de microcontroller en PC alsook met de bouw van het geraamte van ons apparaat. 
+Op de pagina hieronder is onze taakstructuur te vinden. De eerste taak, het verkennen van de opdracht, is al voltooid. Ons CAD model is bijna af en we zijn al begonnen met het coderen van de microcontroller en PC alsook met de bouw van het geraamte van ons apparaat. We hopen met een prototype dat we testen kunnen laten uitvoeren klaar te zijn tegen 28 april 2023.
 \includepdf{taakstructuur_LATEX_2.pdf}
 
 
