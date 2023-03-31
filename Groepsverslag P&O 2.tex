@@ -12,164 +12,96 @@
 	P\&0 2}
 
 
+
 \begin{document}
-	
-	\maketitle
-	
-	\section*{Inleiding}
-	\section{Probleem Schetsen}
-	
-	De klant verwacht een apparaat dat zelfstandig branden kan detecteren en die kan blussen. Hiervoor moet het de exacte locatie van de brand kunnen vaststellen en de arm in de juiste richting richten (horizontale rotatie). Waarna het de tweede arm beweegt om de hoek zodanig te krijgen dat het water op de exacte locatie van de brand terecht komt (verticale rotatie). Het apparaat moet water vanuit een jerrycan in de richting van de brand spuiten en zelf stoppen wanneer de brand geblust is. 
-	
-	Alles moet automatisch werken, maar er moet ook een manuele override zijn waarbij het apparaat volledig manueel kan worden bestuurd en worden uitgeschakeld. Al dit moet gebeuren in communicatie met een PC. 
-	
-	\subsection{Huidige problemen bij Sprinklers}
-	
-	Sprinklers zijn heel handig wegens hun grote bestrijkingsgebied, waarbij ze in hele korte tijd water op een groot gebied kunnen doen neerdalen. Hier komen wel verschillende nadelen bij, zoals de hoogoplopende kosten van het aanleggen van het sprinklersysteem. Ook het onderhouden ervan is allesbehlave goedkoop. 
-	
-	Bovendien kan er veel waterschade zijn na een brand, wat zeker niet altijd nodig is. Voor een klein brandje zal een veel groter gebied met water besproeid worden, wat voor meer schade zorgt dan nodig is.
-	
-	\subsection{Blusplatform}
-	
-	Om deze nadelen te omzeilen opteren we voor een automatisch blusplatform. Het detecteerd branden en besproeit die gericht net water, zonder veel waterschade. Ook is de prijs ervan veel goedkoper, omdat er maar een leiding moet lopen naar de brandblusser.
-	
-	
-	\section{Ontwerp en Materialen}
-	\subsection{Ontwerpproces}
-	
-		Ontwerpspecificaties: \\
-	•	Moet brand detecteren en blussen in rechthoek van 7m x 6m op 3m afstand \\
-	•	Maximale uitwijking horizontaal: 90°  \\
-	•	Maximale uitwijking verticaal: (nog te bepalen volgens hoogte robot) --> min. afstand is 3m, max. afstand is 10,44m \\
-	•	Minimale spuitdruk: … \\
-	•	Hoeveelheid water per blussing: (wordt nog bekend gemaakt, foutenmarge nog inrekenen) \\
-	•	Hoeveelheid beschikbaar water: 10L \\
-	•	Elektronica afgeschermd van water \\
-	•	Massa robot: \\
-	
-	
-	Het finale ontwerp van de brandblusser werd een "kastje" met erin alle electronika en een waterreservoir. Bovenop het "kastje" komt een waterpomp, die water uit het waterreservoir door een slang weg kan spuiten in de richting die we willen. De richting van de waterstraal zal aanpasbaar door het gebruik van twee armen, een die horizontaal roteert en een die verticaal roteert. Zo kunnen we de arm (en waterslang) in de juiste richting richten met de eerste arm en de hoek waar het water mee wordt weggespoten met behulp van de tweede arm bepalen. 
-	
-	De afstand tot het voorwerp zal bepaald worden met behulp van een webcam, want hiermee kunnen we zowel de "branden" detecteren, als de positie van en de afstand tot het object bepalen.
-	
-	\subsection{Materiaalselectie}
-	Arduino Nano 33 iot \\
-	Breadboard Full-size \\
-	Membraanpomp 12V 4.8 bar \\
-	2x Micro Metal Gear Motor 100:1 HP \\
-	Jerrycan 10L\\
-	Whadda WPSE470 waterflowsensor \\
-	USB Webcam 1080P \\
-	Powerbank\\
-	Step-Down Voltage Regulator \\
-	Flexibele slang 10mm \\
-	Slangenklemmen 10mm \\
-	MDF \\
-	Arms with 33 3 mm holes spaced 5 mm apart (10x170 mm) \\
-	Four-hole L-shaped brackets \\
-	MakerBeam profiel 200 mm \\
-	MakerBeam profiel 300 mm \\
-	MakerBeam Hoekverbinding 90° \\
-	MakerBeam Hoekverbinding 90° buitenhoek \\
-	
-	
-	\subsection{Solid Edge}
-	alle onderdelen apart? of enkel volledig ontwerp?
-	
-	
-	\section{Elektrisch Circuit}
-	
-	tekst
-	
-	
-	\subsection{Motoren}
-	
-	tekst
-	
-	
-	\subsection{Sensoren en Webcams}
-	
-	tekst
-	
-	
-	\subsection{Moederbord}
-	
-	tekst
-	
-	
-	\subsection{Bekabeling}
-	
-	tekst
-	
-	
-	
-	\section{Programmeercode}
-	
-	tekst
-	
-	
-	\subsection{LabView}
-	
-	tekst
-	
-	
-	\subsection{Python}
-	\subsubsection{hoekV}
-		De functie \verb*|hoekV(waterDebiet,afstandBeker)| berekent de hoek \(\theta\)  die nodig is tussen het platform en de arm. Deze functie heeft daarvoor het waterdebiet, in \(l/min\), nodig en de verticale afstand, in \(m\), tot het doelwit. Het waterdebiet wordt meegegeven door de waterflowsensor en de afstand door de webcam. Er worden ook niet-variabele parameters gebruikt die op voorhand zijn vastgelegd, zoals de straal van het spuitgat, de hoogte van het platform, de lengte van de arm, de hoogte van het doelwit en de afstand tussen het beginpunt van de arm en de camera. 
-		
-		In deze functie wordt dan de snelheid van het water berekend en dat wordt dan in stelsel gebruikt met twee vergelijkingen. Dit stelsel wordt, met gebruik van de scipy-package, opgelost naar de hoek \(\theta\) en de tijd \(t\).
-		
-		\begin{equation}
-			\begin{cases}
-			afstandBeker  = cos(\theta )*lengteArm - afstandCamera + cos(\theta )*snelheid*t \\ 
-			hoogteBeker  =  hoogtePlatform + sin(\theta )*lengteArm + sin(\theta )*snelheid*t - 1/2*9.81*t^2
-			\end{cases}\,.
-		\end{equation}
-		
-		De hoek \(\theta\) wordt omgezet van radialen naar graden en is dan de output van deze functie en kan dan gebruikt worden voor één van de motoren.
-	\subsection{Arduino}
-	
-	tekst
-	
-	
-	
-	\section{Resultaten}
-	
-	tekst
-	
-	
-	\subsection{Prototype}
-	
-	tekst
-	
-	
-	\subsection{Resultaten Demo}
-	
-	tekst
-	
-	
-	
-	\section{Financieel Rapport}
-	
-	tekst
-	
-	
-	
-	\section{Mogelijke Verbeteringen}
-	
-	tekst
-	
-	
-	
-	\section*{Besluit}
-	
-	Afsluitende tekst.
-	
-	
-	
-	\bibliography{}
-	
-	
-	
-	
+\maketitle
+
+
+
+\section*{Inleiding}        
+Bij de brandbestrijding in grote warenhuizen worden momenteel \textbf{sprinklers} gebruikt. Deze zijn vastgemaakt aan het plafond van het gebouw en zijn aan de waterleiding aangesloten om bij brand water te doen neerdalen. Ze werken heel efficiënt, maar hebben wel enkele grote nadelen. De voornaamste zijn de kost van de aanleg en het onderhoud van alle leidingen die de sprinklers van water voorzien. Ook de verhoogde kans op waterschade bij het springen van een van de vele waterleidingen maakt sprinklers ietwat minder aantrekkelijk. Bovendien is het bestrijkingsgebied bij kleine branden niet proportioneel met de grootte van de brand waardoor er ook meer waterschade kan optreden dan nodig is. \\
+
+Daarom zijn wij op zoek gegaan naar een efficiëntere manier om branden te blussen. Een \textbf{Smart Fire Extinguisher}, die zelf de branden kan detecteren, lokaliseren en gericht kan blussen. Zo zou 1 apparaat (met dus maar 1 aansluiting op de waterleiding of een eigen waterreservoir) een groot oppervlakte brandveilig kunnen maken. Dit zou het veel goedkoper maken voor de eigenaar die geen eindeloos lange waterleidingen moet aanleggen en onderhouden. De totale kost voor grote warenhuizen zou dus veel lager liggen en de kans op waterschade bij het springen van waterleidingen is veel kleiner.
+
+
+\section{Ontwerp en Materialen}
+\subsection{Ontwerpproces}
+% deeltje uit tussentijds verslag halen + toevoegen wrm gekozen voor bepaalde lengte van arm want we kennen nu de hoogte van de te vullen cilinders 0,5m), en we kiezen ervoor om ons apparaat een halve meter te maken dus: berekening toevoegen van hoe ver we kunnen geraken als we geen arm gebruiken en het water op een magische wijze op 45 graden wordt weggesporten en dan kijken of dit ver genoeg is en de lengte (en eig ook hoogte) daarvan laten afhangen. 
+%ook berekening toevoegen waarom pomp op hoogst mogelijke positie te plaatsen
+%klein deeltje schrijven over waarom camera laten meedraaien
+%berekeningen voor diameter van spuit toevoegen 
+
+\subsection{Materiaalselectie}
+%nog toevoegen wat nieuw gekocht + bij alles uitleggen waarom gekocht
+Arduino Nano 33 iot \\
+Breadboard Full-size \\
+Membraanpomp 12V 4.8 bar \\
+2x Micro Metal Gear Motor 100:1 HP \\
+Jerrycan 10L\\
+Whadda WPSE470 waterflowsensor \\
+USB Webcam 1080P \\
+Powerbank\\
+Step-Down Voltage Regulator \\
+Flexibele slang 10mm \\
+Slangenklemmen 10mm \\
+MDF \\
+Arms with 33 3 mm holes spaced 5 mm apart (10x170 mm) \\
+Four-hole L-shaped brackets \\
+MakerBeam profiel 200 mm \\
+MakerBeam profiel 300 mm \\
+MakerBeam Hoekverbinding 90° \\
+MakerBeam Hoekverbinding 90° buitenhoek \\
+
+
+\subsection{Ontwerp in Solid Edge}
+%paar belangrijke onderdelen (eig vooral spuitstuk en mss arm ofzo) apart invoegen + volledige ontwerp insteken
+
+
+\section{Elektrisch Circuit}
+%schematische voorstelling van het elektrisch circuit toevoegen (er bestaan wel websites voor ofzo)
+
+
+\section{Python}
+%alle code die in python is geschreven uitleggen + de berekeningen waarop het is gebaseerd
+
+
+\section{Arduino}
+%alle code in de arduino uitleggen + berekeningen waarop gebaseerd is
+
+
+\section{LabView}
+%gwn code wa uitleggen?
+
+
+
+\section{Prototype}
+%zeggen hoe ons prototype werkte en niet werkte
+
+
+\subsection{Aanpassingen}
+%wat hebben we dan aangepast aan ons prototype
+
+
+\section{Resultaten Demo}
+
+
+
+
+
+\section{Financieel Rapport}
+
+
+
+
+
+\section{Mogelijke Verbeteringen}
+
+
+
+
+\bibliography{}
+
+
+
+
 \end{document}
