@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.9.28)  31 MAR 2023 01:02
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.9.28)  31 MAR 2023 10:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -914,7 +914,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 28--29
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 60--61
+Underfull \hbox (badness 10000) in paragraph at lines 58--59
 
  []
 
@@ -923,28 +923,28 @@ Underfull \hbox (badness 10000) in paragraph at lines 60--61
 {c:/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <c:/texlive/texm
 f-local/tex/latex/local/LaTeX2022/kulak/kulakLogo.pdf> <c:/texlive/texmf-local/
 tex/latex/local/LaTeX2022/kulak/kuleuvenSedes.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 60--61
+
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 62--63
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 64--65
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 66--67
+Underfull \hbox (badness 10000) in paragraph at lines 64--66
 
  []
 
 <Solid Edge Assembly foto.png, id=114, 433.62pt x 503.63156pt>
 File: Solid Edge Assembly foto.png Graphic file (type png)
 <use Solid Edge Assembly foto.png>
-Package pdftex.def Info: Solid Edge Assembly foto.png  used on input line 70.
+Package pdftex.def Info: Solid Edge Assembly foto.png  used on input line 69.
 (pdftex.def)             Requested size: 273.14922pt x 317.2665pt.
 File: kuleuvenSedes.pdf Graphic file (type pdf)
 <use kuleuvenSedes.pdf>
-Package pdftex.def Info: kuleuvenSedes.pdf  used on input line 84.
+Package pdftex.def Info: kuleuvenSedes.pdf  used on input line 83.
 (pdftex.def)             Requested size: 25.00282pt x 42.67912pt.
 
 Package fancyhdr Warning: \headheight is too small (42.67912pt): 
@@ -956,7 +956,7 @@ Package fancyhdr Warning: \headheight is too small (42.67912pt):
 
 [2 <./Solid Edge Assembly foto.png>]
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 9
-5.
+4.
 
 (c:/texlive/2022/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
@@ -965,12 +965,12 @@ File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 File: schematische voorstelling water LATEX.png Graphic file (type png)
 <use schematische voorstelling water LATEX.png>
 Package pdftex.def Info: schematische voorstelling water LATEX.png  used on inp
-ut line 108.
+ut line 107.
 (pdftex.def)             Requested size: 455.24408pt x 123.79866pt.
 <flowchart_hoekV.png, id=127, 172.39406pt x 405.76593pt>
 File: flowchart_hoekV.png Graphic file (type png)
 <use flowchart_hoekV.png>
-Package pdftex.def Info: flowchart_hoekV.png  used on input line 115.
+Package pdftex.def Info: flowchart_hoekV.png  used on input line 114.
 (pdftex.def)             Requested size: 91.04742pt x 214.29956pt.
 \openout4 = `"Tijdelijk Groepsverslag-1.cpt"'.
 
@@ -981,7 +981,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 File: kuleuvenSedes.pdf Graphic file (type pdf)
 <use kuleuvenSedes.pdf>
-Package pdftex.def Info: kuleuvenSedes.pdf  used on input line 128.
+Package pdftex.def Info: kuleuvenSedes.pdf  used on input line 127.
 (pdftex.def)             Requested size: 25.00282pt x 42.67912pt.
 
 Package fancyhdr Warning: \headheight is too small (42.67912pt): 
@@ -995,19 +995,19 @@ Package fancyhdr Warning: \headheight is too small (42.67912pt):
 <flowchart_stoppenPompen.png, id=146, 342.5297pt x 515.67656pt>
 File: flowchart_stoppenPompen.png Graphic file (type png)
 <use flowchart_stoppenPompen.png>
-Package pdftex.def Info: flowchart_stoppenPompen.png  used on input line 134.
+Package pdftex.def Info: flowchart_stoppenPompen.png  used on input line 133.
 (pdftex.def)             Requested size: 136.5746pt x 205.61388pt.
 \openout4 = `"Tijdelijk Groepsverslag-2.cpt"'.
 
 
 (./Tijdelijk Groepsverslag-2.cpt)
-Underfull \hbox (badness 10000) in paragraph at lines 144--145
+Underfull \hbox (badness 10000) in paragraph at lines 143--144
 
  []
 
 File: kuleuvenSedes.pdf Graphic file (type pdf)
 <use kuleuvenSedes.pdf>
-Package pdftex.def Info: kuleuvenSedes.pdf  used on input line 145.
+Package pdftex.def Info: kuleuvenSedes.pdf  used on input line 144.
 (pdftex.def)             Requested size: 25.00282pt x 42.67912pt.
 
 Package fancyhdr Warning: \headheight is too small (42.67912pt): 
@@ -1024,13 +1024,13 @@ File: schematische voorstelling bestrijkingsgebied LATEX.png Graphic file (type
  png)
 <use schematische voorstelling bestrijkingsgebied LATEX.png>
 Package pdftex.def Info: schematische voorstelling bestrijkingsgebied LATEX.png
-  used on input line 158.
+  used on input line 157.
 (pdftex.def)             Requested size: 227.62204pt x 120.0307pt.
 <flowchart afstand berekenen.pdf, id=162, 1026.59537pt x 1242.11049pt>
 File: flowchart afstand berekenen.pdf Graphic file (type pdf)
 <use flowchart afstand berekenen.pdf>
 Package pdftex.def Info: flowchart afstand berekenen.pdf  used on input line 17
-5.
+4.
 (pdftex.def)             Requested size: 364.19664pt x 440.65854pt.
 \openout4 = `"Tijdelijk Groepsverslag-3.cpt"'.
 
@@ -1046,7 +1046,7 @@ pdfTeX warning: pdflatex.exe (file ./taakstructuur_LATEX_2.pdf): PDF inclusion:
 <taakstructuur_LATEX_2.pdf, id=163, 597.55246pt x 845.07724pt>
 File: taakstructuur_LATEX_2.pdf Graphic file (type pdf)
 <use taakstructuur_LATEX_2.pdf>
-Package pdftex.def Info: taakstructuur_LATEX_2.pdf  used on input line 186.
+Package pdftex.def Info: taakstructuur_LATEX_2.pdf  used on input line 185.
 (pdftex.def)             Requested size: 597.551pt x 845.07518pt.
 
 
@@ -1054,7 +1054,7 @@ pdfTeX warning: pdflatex.exe (file ./taakstructuur_LATEX_2.pdf): PDF inclusion:
  found PDF version <1.7>, but at most version <1.5> allowed
 File: taakstructuur_LATEX_2.pdf Graphic file (type pdf)
 <use taakstructuur_LATEX_2.pdf>
-Package pdftex.def Info: taakstructuur_LATEX_2.pdf  used on input line 186.
+Package pdftex.def Info: taakstructuur_LATEX_2.pdf  used on input line 185.
 (pdftex.def)             Requested size: 597.551pt x 845.07518pt.
 
 
@@ -1068,16 +1068,16 @@ pdfTeX warning: pdflatex.exe (file ./taakstructuur_LATEX_2.pdf): PDF inclusion:
 File: taakstructuur_LATEX_2.pdf Graphic file (type pdf)
 <use taakstructuur_LATEX_2.pdf, page 1>
 Package pdftex.def Info: taakstructuur_LATEX_2.pdf , page1 used on input line 1
-86.
+85.
 (pdftex.def)             Requested size: 597.551pt x 845.07518pt.
 File: taakstructuur_LATEX_2.pdf Graphic file (type pdf)
 <use taakstructuur_LATEX_2.pdf, page 1>
 Package pdftex.def Info: taakstructuur_LATEX_2.pdf , page1 used on input line 1
-86.
+85.
 (pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
 File: kuleuvenSedes.pdf Graphic file (type pdf)
 <use kuleuvenSedes.pdf>
-Package pdftex.def Info: kuleuvenSedes.pdf  used on input line 186.
+Package pdftex.def Info: kuleuvenSedes.pdf  used on input line 185.
 (pdftex.def)             Requested size: 25.00282pt x 42.67912pt.
 
 Package fancyhdr Warning: \headheight is too small (42.67912pt): 
@@ -1090,7 +1090,7 @@ Package fancyhdr Warning: \headheight is too small (42.67912pt):
 [5 <./schematische voorstelling bestrijkingsgebied LATEX.png>]
 File: kuleuvenSedes.pdf Graphic file (type pdf)
 <use kuleuvenSedes.pdf>
-Package pdftex.def Info: kuleuvenSedes.pdf  used on input line 186.
+Package pdftex.def Info: kuleuvenSedes.pdf  used on input line 185.
 (pdftex.def)             Requested size: 25.00282pt x 42.67912pt.
 
 
@@ -1105,23 +1105,23 @@ Package fancyhdr Warning: \headheight is too small (42.67912pt):
 File: taakstructuur_LATEX_2.pdf Graphic file (type pdf)
 <use taakstructuur_LATEX_2.pdf, page 1>
 Package pdftex.def Info: taakstructuur_LATEX_2.pdf , page1 used on input line 1
-86.
+85.
 (pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
 File: taakstructuur_LATEX_2.pdf Graphic file (type pdf)
 <use taakstructuur_LATEX_2.pdf, page 1>
 Package pdftex.def Info: taakstructuur_LATEX_2.pdf , page1 used on input line 1
-86.
+85.
 (pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
 File: taakstructuur_LATEX_2.pdf Graphic file (type pdf)
 <use taakstructuur_LATEX_2.pdf, page 1>
 Package pdftex.def Info: taakstructuur_LATEX_2.pdf , page1 used on input line 1
-86.
+85.
 (pdftex.def)             Requested size: 597.57834pt x 845.11386pt.
  [7 <./taakstructuur_LATEX_2.pdf>] 
 AED: lastpage setting LastPage
 File: kuleuvenSedes.pdf Graphic file (type pdf)
 <use kuleuvenSedes.pdf>
-Package pdftex.def Info: kuleuvenSedes.pdf  used on input line 189.
+Package pdftex.def Info: kuleuvenSedes.pdf  used on input line 188.
 (pdftex.def)             Requested size: 25.00282pt x 42.67912pt.
 
 Package fancyhdr Warning: \headheight is too small (42.67912pt): 
@@ -1139,7 +1139,7 @@ ed.
 Here is how much of TeX's memory you used:
  24534 strings out of 475075
  471559 string characters out of 5783001
- 807825 words of memory out of 5000000
+ 808826 words of memory out of 5000000
  45438 multiletter control sequences out of 15000+600000
  478796 words of font info for 48 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1159,7 +1159,7 @@ pe1/public/cm-super/sfbx1440.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public
 /cm-super/sfrm0800.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/cm-super/
 sfrm1000.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1200.p
 fb><c:/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on "Tijdelijk Groepsverslag.pdf" (8 pages, 1042994 bytes).
+Output written on "Tijdelijk Groepsverslag.pdf" (8 pages, 1043566 bytes).
 PDF statistics:
  301 PDF objects out of 1000 (max. 8388607)
  218 compressed objects within 3 object streams

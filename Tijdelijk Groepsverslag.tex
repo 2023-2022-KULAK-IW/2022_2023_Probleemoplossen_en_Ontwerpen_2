@@ -25,9 +25,9 @@
 
 \section*{Inleiding}
                                           
-Bij de brandbestrijding in grote warenhuizen worden momenteel \textbf{sprinklers} gebruikt. Deze zijn vastgemaakt aan het plafond van het gebouw en zijn aan de waterleiding aangesloten om bij brand water te doen neerdalen. Ze werken heel efficient, maar hebben wel enkele grote nadelen. De voornaamste zijn de kost van de aanleg en het onderhoud van alle leidingen die de sprinklers van water voorzien. Ook de verhoogde kans op waterschade bij het springen van een van de vele waterleidingen maakt sprinklers ietwat minder aantrekkelijk. \\
+Bij de brandbestrijding in grote warenhuizen worden momenteel \textbf{sprinklers} gebruikt. Deze zijn vastgemaakt aan het plafond van het gebouw en zijn aan de waterleiding aangesloten om bij brand water te doen neerdalen. Ze werken heel efficiënt, maar hebben wel enkele grote nadelen. De voornaamste zijn de kost van de aanleg en het onderhoud van alle leidingen die de sprinklers van water voorzien. Ook de verhoogde kans op waterschade bij het springen van een van de vele waterleidingen maakt sprinklers ietwat minder aantrekkelijk. Bovendien is het bestrijkingsgebied bij kleine branden niet proportioneel met de grootte van de brand waardoor er ook meer waterschade kan optreden dan nodig is. \\
 
-Daarom zijn wij op zoek gegaan naar een efficientere manier om branden te blussen. Een \textbf{Smart Fire Extinguisher}, die zelf de branden kan detecteren, localiseren en gericht kan blussen. Zo zou 1 apparaat (met dus maar 1 aansluiting op de waterleiding of een eigen waterreservoir) een groot oppervlakte brandveilig kunnen maken. Dit zou het veel goedkoper maken voor de eigenaar die geen eindeloos lange waterleidingen moet aanleggen en onderhouden. De totale kost voor grote warenhuizen zou dus veel lager liggen en de kans op waterschade bij het springen van waterleidingen is veel kleiner.
+Daarom zijn wij op zoek gegaan naar een efficiëntere manier om branden te blussen. Een \textbf{Smart Fire Extinguisher}, die zelf de branden kan detecteren, lokaliseren en gericht kan blussen. Zo zou 1 apparaat (met dus maar 1 aansluiting op de waterleiding of een eigen waterreservoir) een groot oppervlakte brandveilig kunnen maken. Dit zou het veel goedkoper maken voor de eigenaar die geen eindeloos lange waterleidingen moet aanleggen en onderhouden. De totale kost voor grote warenhuizen zou dus veel lager liggen en de kans op waterschade bij het springen van waterleidingen is veel kleiner.
 
 
 
@@ -57,7 +57,7 @@ Alles moet automatisch werken, maar er moet ook een manuele override zijn waarbi
 \subsection{Ontwerp}
 We opteren voor een \textbf{stationair brandblusplatform} dat gebruik maakt van een draaiend platform en een arm om het water in de juiste richting en onder de juiste hoek weg te spuiten. Water uit een waterreservoir zal dan met behulp van een pomp op de gewenste plaats terecht komen. De plaats zal zijn vastgesteld door een camera. Deze detecteert de brand en aan de hand van de beelden zal er berekend worden waar en hoe ver de brand zich bevindt ten opzichte van het brandblusplatform. Daarna zullen nog een hoop berekeningen de hoek van de arm bepalen. \\
 
-Voor de \textbf{detectie} van de brand maken we gebruik van een webcam (USB Webcam 1080P), in Python wordt een programma geschreven op een laptop die aan branddetectie en -localisatie doet. De camera is vastgemaakt op het roterend platform. \\
+Voor de \textbf{detectie} van de brand maken we gebruik van een webcam (USB Webcam 1080P), in Python wordt een programma geschreven op een laptop die aan branddetectie en -lokalisatie doet. De camera is vastgemaakt op het roterend platform. \\
 
 Het \textbf{richten} van het draaiend platform en de arm gebeurt met behulp van twee motoren (Micro Metal Gear Motor 100:1 HP), deze zullen dankzij een motor driver met de gewenste snelheid en in de juiste richting draaien. Volgens de berekeningen gedaan door een laptop en webcam zullen de armen juist gepositioneerd worden. De motoren worden bestuurd door een microcontroller (Arduino nano 33 iot). \\
 
@@ -181,7 +181,7 @@ We benutten beide methoden en nemen het gemiddelde van de twee uitkomsten voor \
 
 
 \section{Planning}
-Op de pagina hieronder is onze taakstructuur te vinden. De eerste taak, het verkennen van de opdracht, is al voltooid. Ons CAD model is bijna af en we zijn al begonnen met het coderen van de microcontroller en PC alsook met de bouw van het geraamte van ons apparaat. We hopen met een prototype dat we testen kunnen laten uitvoeren klaar te zijn tegen 28 april 2023.
+Op de pagina hieronder is onze taakstructuur te vinden. De eerste taak, het verkennen van de opdracht, is al voltooid. Ons CAD model is bijna af en we zijn al begonnen met het coderen van de microcontroller en PC alsook met de bouw van het geraamte van ons apparaat. We hopen met een prototype klaar te zijn tegen 28 april 2023, zodat we daarna kunnen beginnen met testen en nodige aanpassingen kunnen maken.
 \includepdf{taakstructuur_LATEX_2.pdf}
 
 
