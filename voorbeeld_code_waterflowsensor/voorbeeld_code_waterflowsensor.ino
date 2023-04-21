@@ -10,7 +10,7 @@ signal line to arduino digital pin 2.
 
 
 byte sensorInterrupt = 0;  // 0 = digital pin 2
-byte sensorPin       = 7;
+byte sensorPin       = 8;
 
 
 float calibratieFactor = 4.5;
