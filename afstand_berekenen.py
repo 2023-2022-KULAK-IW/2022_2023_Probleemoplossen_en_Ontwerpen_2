@@ -56,9 +56,9 @@ while objects_detected < 3:
                     distance = (distance_angle + distance_focal)/2
                     print("hoek: "+ str(distance_angle), "focal: " +str(distance_focal), "uiteindelijk: " +str(distance))
                     objects_detected += 1
-                    cv2.waitKey(3000)
-                    serialInst.write(str(distance).encode("utf-8"))
 
+                    serialInst.write(str(distance).encode("utf-8"))
+                    cv2.waitKey(3000)
 
     cv2.imshow("hsv", mask)
     cv2.imshow("normal", frame)
