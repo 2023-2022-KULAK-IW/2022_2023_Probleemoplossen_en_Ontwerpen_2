@@ -16,8 +16,8 @@ float msPerGraadV = (1000*255)/(maxSnelheidV*6*relatieveSnelheidV);
 
 float oudeTijd = -1;
 
-byte sensorInterrupt = 0;  // 0 = digital pin 2
-byte sensorPin       = 7;
+byte sensorInterrupt = 9;  // 0 = digital pin 2
+byte sensorPin       = 9;
 
 int branden = 0;
 
@@ -28,7 +28,7 @@ volatile byte pulsenGeteld;
 float debiet;
 unsigned int flowMl;
 unsigned long totaalMl;
-
+float hoekV;
 void setup() {
   Serial.begin(9600);
 
@@ -44,7 +44,7 @@ void setup() {
 
   pinMode(sensorPin, INPUT);
   digitalWrite(sensorPin, HIGH);
-
+  hoekV = 0;
   pulsenGeteld = 0;
   debiet = 0.0;
   flowMl  = 0;
@@ -66,31 +66,30 @@ void loop(){
     digitalWrite(motorHin1, HIGH);
     digitalWrite(motorHin2, LOW);
     analogWrite(motorHin1, relatieveSnelheidH);
-
-    msg = ""
+    msg = "";
   }
 
   if (msg != "" and msg != "start") {
 
-    branden = branden+1;
+    branden++;
     digitalWrite(motorHin1, LOW);
     digitalWrite(motorHin2, LOW);
     analogWrite(motorHin1, 0);
     
-    float hoekV = msg.toFloat();
+    hoekV = msg.toFloat();
     
     digitalWrite(motorVin1, HIGH);
     digitalWrite(motorVin2, LOW);
-    analogwrite(motorVin1,relatievSnelheidV)
+    analogWrite(motorVin1,relatieveSnelheidV);
 
     delay(hoekV*msPerGraadV);
 
     digitalWrite(motorVin1, LOW);
     digitalWrite(motorVin2, LOW);
-    analogwrite(motorVin1,0);
+    analogWrite(motorVin1,0);
 
     digitalWrite(pomp, HIGH);
-    oudeTijd = millis()
+    oudeTijd = millis();
     msg = "";
     }
     if((millis() - oudeTijd) > 1000 and oudeTijd > 0){ 
@@ -106,20 +105,20 @@ void loop(){
       pulsenGeteld = 0;
       attachInterrupt(sensorInterrupt, pulsTeller, FALLING);
     }
-    if(totaalMl > 40){
+    if(totaalMl > 400 and hoekV != 0){
       digitalWrite(pomp, LOW);
       totaalMl = 0;
       oudeTijd = -1;
 
       digitalWrite(motorVin1, LOW);
       digitalWrite(motorVin2, HIGH);
-      analogwrite(motorVin2,relatievSnelheidV)
+      analogWrite(motorVin2,relatieveSnelheidV);
 
       delay(hoekV*msPerGraadV);
 
       digitalWrite(motorVin1, LOW);
       digitalWrite(motorVin2, LOW);
-      analogwrite(motorVin2,0);
+      analogWrite(motorVin2,0);
       if(branden < 3){
         digitalWrite(motorHin1, HIGH);
         digitalWrite(motorHin2, LOW);
