@@ -56,6 +56,7 @@ void loop()
 
       detachInterrupt(sensorInterrupt);
       
+      Serial.println("pulsen:",pulsenGeteld);
       debiet = ((1000.0/(millis() - oudeTijd)) * pulsenGeteld) / calibratieFactor;  //  l/min
 
       oudeTijd = millis();
@@ -68,3 +69,4 @@ void loop()
     }
   
 }
+v  
