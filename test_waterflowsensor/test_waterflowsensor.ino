@@ -8,7 +8,7 @@ signal line to arduino digital pin 2.
  */
 
 byte sensorInterrupt = 0;  // 0 = digital pin 2
-byte sensorPin       = 2;
+byte sensorPin       = 8;
 
 // The hall-effect flow sensor outputs approximately 4.5 pulses per second per
 // litre/minute of flow.
@@ -29,7 +29,6 @@ void setup()
   Serial.begin(9600);
    
   // Set up the status LED line as an output
-  digitalWrite(statusLed, HIGH);  // We have an active-low LED attached
   
   pinMode(sensorPin, INPUT);
   digitalWrite(sensorPin, HIGH);
@@ -86,6 +85,7 @@ void loop()
     Serial.print(int(flowRate));  // Print the integer part of the variable
     Serial.print("L/min");
     Serial.print("\t"); 		  // Print tab space
+    Serial.print(pulseCount);
 
     // Print the cumulative total of litres flowed since starting
     Serial.print("Output Liquid Quantity: ");        
