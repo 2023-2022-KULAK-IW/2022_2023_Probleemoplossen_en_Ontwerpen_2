@@ -13,7 +13,7 @@ byte sensorPin       = 9;
 //test
 // The hall-effect flow sensor outputs approximately 4.5 pulses per second per
 // litre/minute of flow.
-float calibrationFactor = 4.5;
+float calibrationFactor = 1;
 
 volatile byte pulseCount;  
 
@@ -75,7 +75,7 @@ void loop()
     // Divide the flow rate in litres/minute by 60 to determine how many litres have
     // passed through the sensor in this 1 second interval, then multiply by 1000 to
     // convert to millilitres.
-    flowMilliLitres = (flowRate / 60) * 1000;
+    flowMilliLitres = (flowRate / 60) * 1000 ;
     
     // Add the millilitres passed in this second to the cumulative total
     totalMilliLitres += flowMilliLitres;
@@ -110,8 +110,4 @@ void loop()
 /*
 Insterrupt Service Routine
  */
-void pulseCounter()
-{
-  // Increment the pulse counter
-  pulseCount++;
-}
+  
