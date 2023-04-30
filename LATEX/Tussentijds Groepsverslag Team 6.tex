@@ -25,13 +25,14 @@
 
 \section*{Inleiding}
                                           
-Bij de brandbestrijding in grote warenhuizen worden momenteel \textbf{sprinklers} gebruikt. Deze zijn vastgemaakt aan het plafond van het gebouw en zijn aan de waterleiding aangesloten om bij brand water te doen neerdalen. Ze werken heel efficiënt, maar hebben wel enkele grote nadelen. De voornaamste zijn de kost van de aanleg en het onderhoud van alle leidingen die de sprinklers van water voorzien. Ook de verhoogde kans op waterschade bij het springen van een van de vele waterleidingen maakt sprinklers ietwat minder aantrekkelijk. Bovendien is het bestrijkingsgebied bij kleine branden niet proportioneel met de grootte van de brand waardoor er ook meer waterschade kan optreden dan nodig is. \\
+	Bij de brandbestrijding in grote warenhuizen worden momenteel \textbf{sprinklers} gebruikt. Deze zijn vastgemaakt aan het plafond van het gebouw en zijn aan de waterleiding aangesloten om bij brand water te doen neerdalen. Ze werken heel efficiënt, maar hebben wel enkele grote nadelen. De voornaamste zijn de kost van de aanleg en het onderhoud van alle leidingen die de sprinklers van water voorzien. Ook de verhoogde kans op waterschade bij het springen van een van de vele waterleidingen maakt sprinklers ietwat minder aantrekkelijk. Bovendien is het bestrijkingsgebied bij kleine branden niet proportioneel met de grootte van de brand waardoor er ook meer waterschade kan optreden dan nodig is. \\
 
-Daarom zijn wij op zoek gegaan naar een efficiëntere manier om branden te blussen. Een \textbf{Smart Fire Extinguisher}, die zelf de branden kan detecteren, lokaliseren en gericht kan blussen. Zo zou 1 apparaat (met dus maar 1 aansluiting op de waterleiding of een eigen waterreservoir) een groot oppervlakte brandveilig kunnen maken. Dit zou het veel goedkoper maken voor de eigenaar die geen eindeloos lange waterleidingen moet aanleggen en onderhouden. De totale kost voor grote warenhuizen zou dus veel lager liggen en de kans op waterschade bij het springen van waterleidingen is veel kleiner.
+	Daarom zijn wij op zoek gegaan naar een efficiëntere manier om branden te blussen. Een \textbf{Smart Fire Extinguisher}, die zelf de branden kan detecteren, lokaliseren en gericht kan blussen. Zo zou 1 apparaat (met dus maar 1 aansluiting op de waterleiding of een eigen waterreservoir) een groot oppervlakte brandveilig kunnen maken. Dit zou het veel goedkoper maken voor de eigenaar die geen eindeloos lange waterleidingen moet aanleggen en onderhouden. De totale kost voor grote warenhuizen zou dus veel lager liggen en de kans op waterschade bij het springen van waterleidingen is veel kleiner.
 
 
 
 \section{Ontwerp}
+
 	\subsection{Klantenvereisten}
 
 		De klant verwacht een apparaat dat zelfstandig branden kan detecteren en deze kan blussen. Hiervoor moet het de exacte locatie van de brand kunnen vaststellen en de arm in de juiste richting richten. Het apparaat moet water vanuit een jerrycan in de richting van de brand spuiten en zelf stoppen wanneer de brand geblust is. 
@@ -43,6 +44,7 @@ Daarom zijn wij op zoek gegaan naar een efficiëntere manier om branden te bluss
 
 
 \subsection{Ontwerpspecificaties}
+
 	De brandblusser moet de gesimuleerde branden kunnen detecteren en blussen. De branden worden gesimuleerd door drie cilinders met een hoogte van 50 cm en een diameter van 20 cm, waarop 3 rode ledlampen gemonteerd zijn die constant branden. De lampen bevinden zich op 20, 30 en 40 centimeter van de grond. De extinguisher moet dus in staat zijn om per cilinder de rode lampen te detecteren en daarbij ook de afstand tot aan die lamp te meten. De cilinders bevinden zich in een rechthoek van 6m x 7m en de brandblusser staat op 3 m van deze rechthoek.
 	
 	De maximale uitwijking van onze arm is zowel in de horizontale als de verticale richting 90°, alhoewel dit in de verticale richting absoluut niet nodig zal zijn.
@@ -55,42 +57,51 @@ Daarom zijn wij op zoek gegaan naar een efficiëntere manier om branden te bluss
 	
 
 \subsection{Ontwerp}
-	We opteren voor een \textbf{stationair brandblusplatform} dat gebruik maakt van een draaiend platform en een arm om het water in de juiste richting en onder de juiste hoek weg te spuiten. Water uit een waterreservoir zal dan met behulp van een pomp op de gewenste plaats terecht komen. De plaats zal zijn vastgesteld door een camera. Deze detecteert de brand en aan de hand van de beelden zal er berekend worden waar en hoe ver de brand zich bevindt ten opzichte van het brandblusplatform. Daarna zullen nog een hoop berekeningen de hoek van de arm bepalen. \\
+
+	We opteren voor een \textbf{stationair brandblusplatform} dat gebruik maakt van een draaiend platform en een arm om het water in de juiste richting en onder de juiste hoek weg te spuiten. Water uit een waterreservoir zal dan met behulp van een pomp op de gewenste plaats terecht komen. De plaats wordt vastgesteld door een webcam. Deze detecteert de brand en aan de hand van de beelden zal er berekend worden waar en hoe ver de brand zich bevindt ten opzichte van het brandblusplatform. Daarna gebeuren nog enkele berekeningen om de hoek van de arm te bepalen. \\
 	
-	Voor de \textbf{detectie} van de brand maken we gebruik van een webcam (USB Webcam 1080P), in Python wordt een programma geschreven op een laptop die aan branddetectie en -lokalisatie doet. De camera is vastgemaakt op het roterend platform. \\
+	Voor de \textbf{detectie} van de brand maken we gebruik van dezelfde webcam (USB Webcam 1080P), in Python wordt een programma geschreven op een laptop die aan branddetectie en -lokalisatie doet. De camera is vastgemaakt op het roterend platform. \\
 	
 	Het \textbf{richten} van het draaiend platform en de arm gebeurt met behulp van twee motoren (Micro Metal Gear Motor 100:1 HP), deze zullen dankzij een motor driver met de gewenste snelheid en in de juiste richting draaien. Volgens de berekeningen gedaan door een laptop en webcam zullen de armen juist gepositioneerd worden. De motoren worden bestuurd door een microcontroller (Arduino nano 33 iot). \\
 	
-	Wanneer de arm correct gericht is, is de laatste stap het \textbf{blussen} van de brand. Hiervoor zal de pomp (Membraanpomp 12V 4.8 bar) water uit het waterreservoir (jerrycan 10L) door een slang (met diameter 10mm) pompen, om zo weggespoten te worden richting het doelwit. De benodigde afstand halen om het volledige bestrijkingsgebied te kunnen bestrijken is mogelijk door het aanpassen van het mondstuk.\\
+	Wanneer de arm correct gericht is, is de laatste stap het \textbf{blussen} van de brand. Hiervoor zal de pomp (Membraanpomp 12V 4.8 bar) water uit het waterreservoir (jerrycan 10L) door een slang (met diameter 10mm) pompen, om zo weggespoten te worden richting het doelwit. De benodigde afstand halen om het volledige bestrijkingsgebied te kunnen bestrijken is mogelijk door het aanpassen van het mondstuk. We zullen dus een smallere spuit gebruiken, met een diameter van 3 mm om precies te zijn.\\
 	%moet er in nog meer detail beschreven worden welke materialen we gebruiken en voor wat??
 
-	\begin{figure} [!h]
-		\centering
-		\includegraphics[width = .6 \textwidth]{Solid Edge Assembly foto}
-		\caption{Ontwerp in Solid Edge}
-		\label{ontwerp}
-	\end{figure}
+		\begin{figure} [!h]
+			\centering
+			\includegraphics[width = .6 \textwidth]{Solid Edge Assembly foto}
+			\caption{Ontwerp in Solid Edge}
+			\label{ontwerp}
+		\end{figure}
 
 
 
 \section{Berekeningen en code}
+
 	\subsection{Hoek van de waterstraal}
+	
 		\subsubsection{Berekening}
-			De afstand zoals te zien in afbeelding \ref{schematische voorstelling} tussen het brandblusapparaat en de cilinder is \(x\) waarbij \(x\) maximaal gelijk kan zijn aan \(10,45 m\).
+		
+			Als eerste zullen we de maximaal mogelijke afstand tussen het brandblusapparaat en de cilinder berekenen. We berekenen dus de afstand tussen het blusapparaat en de hoek van het terrein in de onderstaande formule. De maximale afstand die we dus moeten overbruggen is \(10,45 m\)
+		
 				\begin{equation}
 					x^2 = 3^2 + 10^2
 					\Rightarrow x \approx 10,45 
 				\end{equation}
+				
 			Om deze afstand te halen berekenen we de hoek waaronder het water moet worden weggespoten. De hoogte van het platform is hier \(h_1\) en de hoogte van de arm is \(h_2 = lsin(\theta)\) met \(l\) de lengte van de arm. \(y\) is de hoogte van de cilinder die moet worden opgevuld. Dan krijgen we:
+			
 				\begin{equation}
 					\begin{cases}
 						x  = cos(\theta) v t \\
 						y = h_1 + h_2 + sin(\theta) v t + \frac{-1}{2} g t^2
 					\end{cases}
 				\end{equation}
-			Bij het gebruik van de brandblusser zullen we met behulp van de camera \(x\) al kennen, dankzij de waterflowsensor zullen we \(v\) ook accuraat kennen, \(h_1\) staat vast en \(h_2\) hangt af van de hoek \(\theta\). Uit de twee vergelijkingen kunnen we \(\theta\) en \(t\) halen en zal het doelwit gevuld geraken.
+				
+			Bij het gebruik van de brandblusser zullen we met behulp van de camera de afstand \(x\) al kennen, dankzij de waterflowsensor zullen we de snelheid van het water \(v\) ook accuraat kennen.  Daarnaast staat \(h_1\) vast en hangt \(h_2\) af van de hoek \(\theta\). Uit de twee vergelijkingen kunnen we \(\theta\) en \(t\) halen en zo correcte instructies doorgeven aan onze robotarm.
 
 		\subsubsection{Code}
+		
 			De functie \verb*|hoekV(waterDebiet,afstandBeker)| (zie figuur \ref{flowchart_water}) berekent de hoek \(\theta\)  die nodig is tussen het platform en de arm. Deze functie heeft daarvoor het waterdebiet, in \(l/min\), nodig en de verticale afstand, in \(m\), tot het doelwit. Het waterdebiet wordt meegegeven door de waterflowsensor en de afstand door de webcam. Er worden ook niet-variabele parameters gebruikt die op voorhand zijn vastgelegd, zoals de straal van het spuitgat, de hoogte van het platform, de lengte van de arm, de hoogte van het doelwit en de afstand tussen het beginpunt van de arm en de camera. 
 
 			In deze functie wordt dan de snelheid van het water berekend en dat wordt in een stelsel gebruikt met twee vergelijkingen. Dit stelsel wordt, met gebruik van de scipy-package, opgelost naar de hoek \(\theta\) en de tijd \(t\).
