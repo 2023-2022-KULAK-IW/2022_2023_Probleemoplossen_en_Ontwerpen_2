@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.3.4)  30 APR 2023 11:42
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.3.4)  1 MAY 2023 21:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -894,12 +894,12 @@ Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
 )
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 ))
-<kulakLogo.pdf, id=91, 245.83241pt x 51.21533pt>
+<kulakLogo.pdf, id=95, 245.83241pt x 51.21533pt>
 File: kulakLogo.pdf Graphic file (type pdf)
 <use kulakLogo.pdf>
 Package pdftex.def Info: kulakLogo.pdf  used on input line 22.
 (pdftex.def)             Requested size: 204.85858pt x 42.67912pt.
-<kuleuvenSedes.pdf, id=92, 349.305pt x 596.2275pt>
+<kuleuvenSedes.pdf, id=96, 349.305pt x 596.2275pt>
 File: kuleuvenSedes.pdf Graphic file (type pdf)
 <use kuleuvenSedes.pdf>
 Package pdftex.def Info: kuleuvenSedes.pdf  used on input line 22.
@@ -909,13 +909,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 22--23
 
  []
 
+(./Tussentijds Groepsverslag Team 6.toc)
+\tf@toc=\write6
+\openout6 = `"Tussentijds Groepsverslag Team 6.toc"'.
+
 
 Underfull \hbox (badness 10000) in paragraph at lines 28--29
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 61--62
 
  []
 
@@ -924,6 +923,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 61--62
 {c:/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <c:/texlive/texm
 f-local/tex/latex/local/kulak/kulakLogo.pdf> <c:/texlive/texmf-local/tex/latex/
 local/kulak/kuleuvenSedes.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 61--62
+
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 63--64
 
  []
@@ -934,34 +938,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 65--66
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 67--69
+Underfull \hbox (badness 10000) in paragraph at lines 67--68
 
  []
 
-
-! LaTeX Error: File `Solid Edge Assembly foto' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.72 ...= .6 \textwidth]{Solid Edge Assembly foto}
-                                                  
-I could not locate the file with any of these extensions:
-.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 1
-05.
-(c:/texlive/2022/texmf-dist/tex/latex/base/t1cmtt.fd
-File: t1cmtt.fd 2022/07/10 v2.5l Standard LaTeX font definitions
-)
 File: kuleuvenSedes.pdf Graphic file (type pdf)
 <use kuleuvenSedes.pdf>
-Package pdftex.def Info: kuleuvenSedes.pdf  used on input line 106.
+Package pdftex.def Info: kuleuvenSedes.pdf  used on input line 77.
 (pdftex.def)             Requested size: 25.00282pt x 42.67912pt.
-
 
 Package fancyhdr Warning: \headheight is too small (42.67912pt): 
 (fancyhdr)                Make it at least 46.27914pt, for example:
@@ -972,13 +956,32 @@ Package fancyhdr Warning: \headheight is too small (42.67912pt):
 
 [2]
 
+! LaTeX Error: File `Solid Edge Assembly foto' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.80 ...= .6 \textwidth]{Solid Edge Assembly foto}
+                                                  
+I could not locate the file with any of these extensions:
+.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 1
+13.
+(c:/texlive/2022/texmf-dist/tex/latex/base/t1cmtt.fd
+File: t1cmtt.fd 2022/07/10 v2.5l Standard LaTeX font definitions
+)
+
 ! LaTeX Error: File `schematische voorstelling water LATEX' not found.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.118 ...h]{schematische voorstelling water LATEX}
+l.126 ...h]{schematische voorstelling water LATEX}
                                                   
 I could not locate the file with any of these extensions:
 .pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
@@ -992,7 +995,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.125 ...s[width = .2 \textwidth]{flowchart_hoekV}
+l.133 ...s[width = .2 \textwidth]{flowchart_hoekV}
                                                   
 I could not locate the file with any of these extensions:
 .pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
@@ -1002,31 +1005,11 @@ If that doesn't work, type  X <return>  to quit.
 \openout4 = `"Tussentijds Groepsverslag Team 6-1.cpt"'.
 
 (./Tussentijds Groepsverslag Team 6-1.cpt)
-
-! LaTeX Error: File `flowchart_stoppenPompen' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.144 ...= .3 \textwidth]{flowchart_stoppenPompen}
-                                                  
-I could not locate the file with any of these extensions:
-.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-\openout4 = `"Tussentijds Groepsverslag Team 6-2.cpt"'.
-
-(./Tussentijds Groepsverslag Team 6-2.cpt)
-Underfull \hbox (badness 10000) in paragraph at lines 154--155
-
- []
-
 File: kuleuvenSedes.pdf Graphic file (type pdf)
 <use kuleuvenSedes.pdf>
-Package pdftex.def Info: kuleuvenSedes.pdf  used on input line 162.
+Package pdftex.def Info: kuleuvenSedes.pdf  used on input line 146.
 (pdftex.def)             Requested size: 25.00282pt x 42.67912pt.
+
 
 Package fancyhdr Warning: \headheight is too small (42.67912pt): 
 (fancyhdr)                Make it at least 46.27914pt, for example:
@@ -1037,6 +1020,27 @@ Package fancyhdr Warning: \headheight is too small (42.67912pt):
 
 [3]
 
+! LaTeX Error: File `flowchart_stoppenPompen' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.152 ...= .3 \textwidth]{flowchart_stoppenPompen}
+                                                  
+I could not locate the file with any of these extensions:
+.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+\openout4 = `"Tussentijds Groepsverslag Team 6-2.cpt"'.
+
+(./Tussentijds Groepsverslag Team 6-2.cpt)
+Underfull \hbox (badness 10000) in paragraph at lines 162--163
+
+ []
+
+
 ! LaTeX Error: File `schematische voorstelling bestrijkingsgebied LATEX' not fo
 und.
 
@@ -1044,16 +1048,29 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.168 ...he voorstelling bestrijkingsgebied LATEX}
+l.176 ...he voorstelling bestrijkingsgebied LATEX}
                                                   
 I could not locate the file with any of these extensions:
 .pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
+File: kuleuvenSedes.pdf Graphic file (type pdf)
+<use kuleuvenSedes.pdf>
+Package pdftex.def Info: kuleuvenSedes.pdf  used on input line 184.
+(pdftex.def)             Requested size: 25.00282pt x 42.67912pt.
+
+Package fancyhdr Warning: \headheight is too small (42.67912pt): 
+(fancyhdr)                Make it at least 46.27914pt, for example:
+(fancyhdr)                \setlength{\headheight}{46.27914pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-3.60002pt}.
+
+[4]
 
 LaTeX Warning: File `flowchart afstand berekenen.pdf' not found on input line 1
-85.
+93.
 
 
 ! Package pdftex.def Error: File `flowchart afstand berekenen.pdf' not found: u
@@ -1063,7 +1080,7 @@ See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.185 ...xtwidth]{flowchart afstand berekenen.pdf}
+l.193 ...xtwidth]{flowchart afstand berekenen.pdf}
                                                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1072,16 +1089,13 @@ If that doesn't work, type  X <return>  to quit.
 
 (./Tussentijds Groepsverslag Team 6-3.cpt)
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
 ! Package pdfpages Error: Cannot find file `taakstructuur_LATEX_2.pdf'.
 
 See the pdfpages package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.196 	\includepdf{taakstructuur_LATEX_2.pdf}
+l.204 	\includepdf{taakstructuur_LATEX_2.pdf}
                                              
 This error message was generated by an \errmessage
 command, so I can't give any explicit help.
@@ -1095,14 +1109,14 @@ See the pdfpages package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.196 	\includepdf{taakstructuur_LATEX_2.pdf}
+l.204 	\includepdf{taakstructuur_LATEX_2.pdf}
                                              
 (That was another \errmessage.)
 
 ! Undefined control sequence.
 \AM@checkpagenumber #1->\ifnum #1>\AM@pagecount 
                                                 \relax \ifthenelse {\boolean...
-l.196 	\includepdf{taakstructuur_LATEX_2.pdf}
+l.204 	\includepdf{taakstructuur_LATEX_2.pdf}
                                              
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1113,7 +1127,7 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    \relax 
-l.196 	\includepdf{taakstructuur_LATEX_2.pdf}
+l.204 	\includepdf{taakstructuur_LATEX_2.pdf}
                                              
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
@@ -1126,7 +1140,7 @@ See the pdfpages package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.196 	\includepdf{taakstructuur_LATEX_2.pdf}
+l.204 	\includepdf{taakstructuur_LATEX_2.pdf}
                                              
 You have set a wrong page number in the `pages' option. Document 
 `\AM@currentdocname ' does not have 1 pages.
@@ -1135,22 +1149,8 @@ You have set a wrong page number in the `pages' option. Document
 AED: lastpage setting LastPage
 File: kuleuvenSedes.pdf Graphic file (type pdf)
 <use kuleuvenSedes.pdf>
-Package pdftex.def Info: kuleuvenSedes.pdf  used on input line 199.
+Package pdftex.def Info: kuleuvenSedes.pdf  used on input line 207.
 (pdftex.def)             Requested size: 25.00282pt x 42.67912pt.
-
-Package fancyhdr Warning: \headheight is too small (42.67912pt): 
-(fancyhdr)                Make it at least 46.27914pt, for example:
-(fancyhdr)                \setlength{\headheight}{46.27914pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-3.60002pt}.
-
-[4]
-File: kuleuvenSedes.pdf Graphic file (type pdf)
-<use kuleuvenSedes.pdf>
-Package pdftex.def Info: kuleuvenSedes.pdf  used on input line 199.
-(pdftex.def)             Requested size: 25.00282pt x 42.67912pt.
-
 
 Package fancyhdr Warning: \headheight is too small (42.67912pt): 
 (fancyhdr)                Make it at least 46.27914pt, for example:
@@ -1162,16 +1162,16 @@ Package fancyhdr Warning: \headheight is too small (42.67912pt):
 [5] (./Tussentijds Groepsverslag Team 6.aux)
 Package rerunfilecheck Info: File `"Tussentijds Groepsverslag Team 6".out' has 
 not changed.
-(rerunfilecheck)             Checksum: 513C6CDDEBFBAA5F851F5EE8295AC128;1773.
+(rerunfilecheck)             Checksum: 8522968AB825AFA25D36C8444350615B;1989.
  ) 
 Here is how much of TeX's memory you used:
- 24688 strings out of 476024
- 477360 string characters out of 5794017
- 1871382 words of memory out of 5000000
- 44634 multiletter control sequences out of 15000+600000
+ 24698 strings out of 476024
+ 477618 string characters out of 5794017
+ 1873382 words of memory out of 5000000
+ 44639 multiletter control sequences out of 15000+600000
  521824 words of font info for 52 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,19n,94p,783b,1063s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,18n,94p,783b,1063s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {c:/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{c:/texl
 ive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}<c:/texlive/2022/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2022/texmf-dis
@@ -1187,11 +1187,11 @@ pe1/public/cm-super/sfbx1440.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public
 /cm-super/sfrm0800.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/cm-super/
 sfrm1000.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1200.p
 fb><c:/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on "Tussentijds Groepsverslag Team 6.pdf" (5 pages, 409443 bytes
+Output written on "Tussentijds Groepsverslag Team 6.pdf" (5 pages, 413880 bytes
 ).
 PDF statistics:
- 236 PDF objects out of 1000 (max. 8388607)
- 177 compressed objects within 2 object streams
- 33 named destinations out of 1000 (max. 500000)
- 239 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 257 PDF objects out of 1000 (max. 8388607)
+ 198 compressed objects within 2 object streams
+ 35 named destinations out of 1000 (max. 500000)
+ 247 words of extra memory for PDF output out of 10000 (max. 10000000)
 

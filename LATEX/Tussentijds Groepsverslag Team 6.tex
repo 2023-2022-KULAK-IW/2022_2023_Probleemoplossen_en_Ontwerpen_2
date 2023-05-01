@@ -21,13 +21,13 @@
 
 \maketitle
 
-
+\tableofcontents
 
 \section*{Inleiding}
                                           
-	Bij de brandbestrijding in grote warenhuizen worden momenteel \textbf{sprinklers} gebruikt. Deze zijn vastgemaakt aan het plafond van het gebouw en zijn aan de waterleiding aangesloten om bij brand water te doen neerdalen. Ze werken heel efficiënt, maar hebben wel enkele grote nadelen. De voornaamste zijn de kost van de aanleg en het onderhoud van alle leidingen die de sprinklers van water voorzien. Ook de verhoogde kans op waterschade bij het springen van een van de vele waterleidingen maakt sprinklers ietwat minder aantrekkelijk. Bovendien is het bestrijkingsgebied bij kleine branden niet proportioneel met de grootte van de brand waardoor er ook meer waterschade kan optreden dan nodig is. \\
+	Bij de brandbestrijding in grote warenhuizen worden momenteel \textbf{sprinklers} gebruikt. Deze zijn vastgemaakt aan het plafond van het gebouw en zijn aan de waterleiding aangesloten om bij brand water te doen neerdalen. Ze werken heel efficiënt, maar hebben wel enkele grote nadelen. De voornaamste zijn de kost van de aanleg en het onderhoud van alle leidingen die de sprinklers van water voorzien. Ook de verhoogde kans op waterschade bij het springen van één van de vele waterleidingen maakt sprinklers ietwat minder aantrekkelijk. Bovendien is het bestrijkingsgebied bij kleine branden niet proportioneel met de grootte van de brand waardoor er ook meer waterschade kan optreden dan nodig is. \\
 
-	Daarom zijn wij op zoek gegaan naar een efficiëntere manier om branden te blussen. Een \textbf{Smart Fire Extinguisher}, die zelf de branden kan detecteren, lokaliseren en gericht kan blussen. Zo zou 1 apparaat (met dus maar 1 aansluiting op de waterleiding of een eigen waterreservoir) een groot oppervlakte brandveilig kunnen maken. Dit zou het veel goedkoper maken voor de eigenaar die geen eindeloos lange waterleidingen moet aanleggen en onderhouden. De totale kost voor grote warenhuizen zou dus veel lager liggen en de kans op waterschade bij het springen van waterleidingen is veel kleiner.
+	Daarom zijn wij, team 6,  op zoek gegaan naar een efficiëntere manier om branden te blussen. Een \textbf{Smart Fire Extinguisher}, die zelf de branden kan detecteren, lokaliseren en gericht kan blussen. Zo zou 1 apparaat (met dus maar één aansluiting op de waterleiding of een eigen waterreservoir) een groot oppervlakte brandveilig kunnen maken. Dit zou het veel goedkoper maken voor de eigenaar die geen eindeloos lange waterleidingen moet aanleggen en onderhouden. De totale kost voor grote warenhuizen zou dus veel lager liggen en de kans op waterschade bij het springen van waterleidingen is veel kleiner.
 
 
 
@@ -35,7 +35,7 @@
 
 	\subsection{Klantenvereisten}
 
-		De klant verwacht een apparaat dat zelfstandig branden kan detecteren en deze kan blussen. Hiervoor moet het de exacte locatie van de brand kunnen vaststellen en de arm in de juiste richting richten. Het apparaat moet water vanuit een jerrycan in de richting van de brand spuiten en zelf stoppen wanneer de brand geblust is. 
+		De klant verwacht een apparaat dat zelfstandig branden kan detecteren en deze kan blussen. Hiervoor moet het de exacte locatie van de brand kunnen vaststellen en de arm van het blusapparaat in de juiste richting richten. Het apparaat moet water vanuit een jerrycan in de richting van de brand spuiten en zelf stoppen wanneer de brand geblust is. 
 		
 		Alles moet automatisch werken, maar er moet ook een manuele override zijn waarbij het apparaat volledig manueel kan worden bestuurd en worden uitgeschakeld. Al dit moet gebeuren in communicatie met een PC. 
 		
@@ -43,36 +43,44 @@
 
 
 
-\subsection{Ontwerpspecificaties}
+	\subsection{Ontwerpspecificaties}
 
-	De brandblusser moet de gesimuleerde branden kunnen detecteren en blussen. De branden worden gesimuleerd door drie cilinders met een hoogte van 50 cm en een diameter van 20 cm, waarop 3 rode ledlampen gemonteerd zijn die constant branden. De lampen bevinden zich op 20, 30 en 40 centimeter van de grond. De extinguisher moet dus in staat zijn om per cilinder de rode lampen te detecteren en daarbij ook de afstand tot aan die lamp te meten. De cilinders bevinden zich in een rechthoek van 6m x 7m en de brandblusser staat op 3 m van deze rechthoek.
-	
-	De maximale uitwijking van onze arm is zowel in de horizontale als de verticale richting 90°, alhoewel dit in de verticale richting absoluut niet nodig zal zijn.
-	
-	Er zal een 10L water beschikbaar zijn in een jerrycan waarmee we de 'branden' moeten blussen. In elke cilinder moet minstens ... cl water geschoten worden.
-	
-	Daarnaast mag de robot maximaal 20 kg wegen, water inbegrepen. De effectieve brandblusser mag dus maximaal een kleine 10kg wegen.
-	
-	De werking van het blusapparaat moet volledig geautomatiseerd zijn, maar het is belangrijk dat er mogelijkheid is tot manuele override. Hierbij moeten we zelf kunnen richten en spuiten met de robotarm via de computer.
+		De brandblusser moet de gesimuleerde branden kunnen detecteren en blussen. De branden worden gesimuleerd door drie cilinders met een hoogte van 50 cm en een diameter van 20 cm, waarop 3 rode ledlampen gemonteerd zijn die constant branden. De lampen bevinden zich op 20, 30 en 40 centimeter van de grond. De extinguisher moet dus in staat zijn om per cilinder de rode lampen te detecteren en daarbij ook de afstand tot aan die lamp te meten. De cilinders bevinden zich in een rechthoek van 6m x 7m en de brandblusser staat op 3 m van deze rechthoek.
+		
+		De maximale uitwijking van onze arm is zowel in de horizontale als de verticale richting 90°, alhoewel dit in de verticale richting absoluut niet nodig zal zijn.
+		
+		Er zal een 10L water beschikbaar zijn in een jerrycan waarmee we de 'branden' moeten blussen. In elke cilinder moet minstens ... cl water geschoten worden.
+		
+		Daarnaast mag de robot maximaal 20 kg wegen, water inbegrepen. De effectieve brandblusser mag dus maximaal een kleine 10kg wegen.
+		
+		De werking van het blusapparaat moet volledig geautomatiseerd zijn, maar het is belangrijk dat er mogelijkheid is tot manuele override. Hierbij moeten we zelf kunnen richten en spuiten met de robotarm via de computer.
 	
 
-\subsection{Ontwerp}
+	\subsection{Uiteindelijke Ontwerp}
 
-	We opteren voor een \textbf{stationair brandblusplatform} dat gebruik maakt van een draaiend platform en een arm om het water in de juiste richting en onder de juiste hoek weg te spuiten. Water uit een waterreservoir zal dan met behulp van een pomp op de gewenste plaats terecht komen. De plaats wordt vastgesteld door een webcam. Deze detecteert de brand en aan de hand van de beelden zal er berekend worden waar en hoe ver de brand zich bevindt ten opzichte van het brandblusplatform. Daarna gebeuren nog enkele berekeningen om de hoek van de arm te bepalen. \\
+		We opteren voor een \textbf{stationair brandblusplatform} dat gebruik maakt van een draaiend platform en een arm om het water in de juiste richting en onder de juiste hoek weg te spuiten.  Water uit een waterreservoir zal dan met behulp van een pomp op de gewenste plaats terecht komen. De plaats wordt vastgesteld door een webcam. Deze detecteert de brand en aan de hand van de beelden zal er berekend worden waar en hoe ver de brand zich bevindt ten opzichte van het brandblusplatform. Daarna gebeuren nog enkele berekeningen om de hoek van de arm te bepalen. Deze berekeningen worden later in het verslag nog besproken. \\
+		
+		Voor de \textbf{detectie} van de brand maken we gebruik van dezelfde webcam (USB Webcam 1080P). In Python wordt dan een programma geschreven op een laptop die aan branddetectie en -lokalisatie doet. De camera is vastgemaakt op het roterend platform. \\
+		
+		Het \textbf{richten} van het draaiend platform en de arm gebeurt met behulp van twee motoren (Micro Metal Gear Motor 100:1 HP), deze zullen dankzij een motor driver met de gewenste snelheid en in de juiste richting draaien. Volgens de berekeningen gedaan door een laptop en webcam zullen de armen juist gepositioneerd worden. De motoren worden bestuurd door een microcontroller (Arduino nano 33 iot). \\
+		
+		Wanneer de arm correct gericht is, is de laatste stap het \textbf{blussen} van de brand. Hiervoor zal de pomp (Membraanpomp 12V 4.8 bar) water uit het waterreservoir (jerrycan 10L) door een slang (met diameter 10mm) pompen, om zo weggespoten te worden richting het doelwit. De benodigde afstand halen om het volledige bestrijkingsgebied te kunnen bestrijken is mogelijk door het aanpassen van het mondstuk. We zullen dus een smallere spuit gebruiken, met een diameter van 3 mm om precies te zijn.\\
+		
+	\subsection{Materiaalselectie}
 	
-	Voor de \textbf{detectie} van de brand maken we gebruik van dezelfde webcam (USB Webcam 1080P), in Python wordt een programma geschreven op een laptop die aan branddetectie en -lokalisatie doet. De camera is vastgemaakt op het roterend platform. \\
-	
-	Het \textbf{richten} van het draaiend platform en de arm gebeurt met behulp van twee motoren (Micro Metal Gear Motor 100:1 HP), deze zullen dankzij een motor driver met de gewenste snelheid en in de juiste richting draaien. Volgens de berekeningen gedaan door een laptop en webcam zullen de armen juist gepositioneerd worden. De motoren worden bestuurd door een microcontroller (Arduino nano 33 iot). \\
-	
-	Wanneer de arm correct gericht is, is de laatste stap het \textbf{blussen} van de brand. Hiervoor zal de pomp (Membraanpomp 12V 4.8 bar) water uit het waterreservoir (jerrycan 10L) door een slang (met diameter 10mm) pompen, om zo weggespoten te worden richting het doelwit. De benodigde afstand halen om het volledige bestrijkingsgebied te kunnen bestrijken is mogelijk door het aanpassen van het mondstuk. We zullen dus een smallere spuit gebruiken, met een diameter van 3 mm om precies te zijn.\\
-	%moet er in nog meer detail beschreven worden welke materialen we gebruiken en voor wat??
+		We hebben gekozen om het frame van onze constructie te maken uit Makerbeams. We opteerden hiervoor omdat deze licht zijn, maar toch sterk. Daarnaast zijn ze makkelijk aan elkaar te bevestigen door middel van hoekverbindingen, boutjes en moertjes.
+		
+		Verder zullen de twee lagen in ons platform bestaan uit houten planken (MDF) met een dikte van circa 1 cm. Ook voor het draaielement van onze arm zullen we MDF gebruiken.
+		
+		Voor de beweegbare arm zullen we verbindingen uit kunststof gebruiken. Deze verbindingen zijn zeer licht, wat nodig is om de verticale en rotarionele bewegingen makkelijk uit te voeren. Natuurlijk zijn de verbindingen ook stevig genoeg, dit is belangrijk om de tuit en de waterflowsensor op het uiteinde te kunnen dragen.
+		%moet er in nog meer detail beschreven worden welke materialen we gebruiken en voor wat??
 
-		\begin{figure} [!h]
-			\centering
-			\includegraphics[width = .6 \textwidth]{Solid Edge Assembly foto}
-			\caption{Ontwerp in Solid Edge}
-			\label{ontwerp}
-		\end{figure}
+			\begin{figure} [!h]
+				\centering
+				\includegraphics[width = .6 \textwidth]{Solid Edge Assembly foto}
+				\caption{Ontwerp in Solid Edge}
+				\label{ontwerp}
+			\end{figure}
 
 
 
@@ -82,19 +90,19 @@
 	
 		\subsubsection{Berekening}
 		
-			Als eerste zullen we de maximaal mogelijke afstand tussen het brandblusapparaat en de cilinder berekenen. We berekenen dus de afstand tussen het blusapparaat en de hoek van het terrein in de onderstaande formule. De maximale afstand die we dus moeten overbruggen is \(10,45 m\)
+			Als eerste zullen we de maximaal mogelijke afstand tussen het brandblusapparaat en de cilinder berekenen. We berekenen dus de afstand tussen het blusapparaat en de hoek van het terrein in de onderstaande formule. De maximale afstand die we dus moeten overbruggen is 10,45 m.
 		
 				\begin{equation}
 					x^2 = 3^2 + 10^2
 					\Rightarrow x \approx 10,45 
 				\end{equation}
 				
-			Om deze afstand te halen berekenen we de hoek waaronder het water moet worden weggespoten. De hoogte van het platform is hier \(h_1\) en de hoogte van de arm is \(h_2 = lsin(\theta)\) met \(l\) de lengte van de arm. \(y\) is de hoogte van de cilinder die moet worden opgevuld. Dan krijgen we:
+			Om deze afstand te halen berekenen we de hoek $\theta$ waaronder het water moet worden weggespoten. De hoogte van het platform is hier \(h_1\) en de hoogte van de arm is \(h_2 = l \cdot sin(\theta)\) met \(l\) de lengte van de arm. \(y\) is de hoogte van de cilinder die moet worden opgevuld. Dan krijgen we:
 			
 				\begin{equation}
 					\begin{cases}
-						x  = cos(\theta) v t \\
-						y = h_1 + h_2 + sin(\theta) v t + \frac{-1}{2} g t^2
+						x  = cos(\theta) \cdot v \cdot t \\
+						y = h_1 + h_2 + sin(\theta) \cdot v \cdot t + \frac{-1}{2} \cdot g \cdot t^2
 					\end{cases}
 				\end{equation}
 				
@@ -111,7 +119,7 @@
 						hoogteBeker  =  hoogtePlatform + sin(\theta )*lengteArm + sin(\theta )*snelheid*t - 1/2*9.81*t^2
 					\end{cases}\,.
 				\end{equation}
-			De hoek \(\theta\) wordt omgezet van radialen naar graden en is dan de output van deze functie en kan dan gebruikt worden voor één van de motoren.
+			De hoek \(\theta\) wordt omgezet van radialen naar graden en is dan de output van deze functie en kan gebruikt worden voor één van de motoren.
 
 				\begin{figure} [h!]
 					\centering
