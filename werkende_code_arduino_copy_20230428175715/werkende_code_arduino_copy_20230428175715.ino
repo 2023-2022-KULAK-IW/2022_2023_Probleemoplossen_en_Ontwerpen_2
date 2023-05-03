@@ -14,8 +14,6 @@ float maxSnelheidV = 150; //zelf te bepalen na testen [in rpm]
 float relatieveSnelheidV = 100; //zelf te bepalen na testen
 float msPerGraadV = (1000*255)/(maxSnelheidV*6*relatieveSnelheidV);
 
-float oudeTijd = -1;
-
 byte sensorInterrupt = 9;  // 0 = digital pin 2
 byte sensorPin       = 9;
 
@@ -90,10 +88,10 @@ void loop(){
     analogWrite(motorVin1,0);
 
     digitalWrite(pomp, HIGH);
-    oldTime = millis();
+    
     msg = "";
     }
-    if((millis() - oldTime) > 1000 and oldTime > 0)   
+    if((millis() - oldTime) > 1000)   
   { 
  
     detachInterrupt(sensorInterrupt);
@@ -115,7 +113,6 @@ void loop(){
     if(totalMilliLitres > 10 and hoekV != 0){
       digitalWrite(pomp, LOW);
       totalMilliLitres = 0;
-      oldTime = -1;
 
       digitalWrite(motorVin1, LOW);
       digitalWrite(motorVin2, HIGH);
