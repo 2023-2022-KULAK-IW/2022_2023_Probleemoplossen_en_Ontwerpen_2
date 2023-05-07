@@ -68,7 +68,35 @@ void loop(){
     msg = "";
   }
 
-  if (msg != "" and msg != "start") { //nog python code veranderen en deze voorwaarde dat hij rekening houdt met een begincharacter, zo kunnen we ook van de laptop stuff sturen
+  if(msg == "w"){
+     digitalWrite(motorVin1, LOW);
+      digitalWrite(motorVin2, HIGH);
+      analogWrite(motorVin2, relatieveSnelheidV);
+      msg = "";
+    } 
+  
+  if(msg == "a"){
+    digitalWrite(motorHin1, LOW);
+      digitalWrite(motorHin2, HIGH);
+      analogWrite(motorHin2, relatieveSnelheidH);
+      msg = "";
+    }
+
+  if(msg == "s"){
+     digitalWrite(motorVin1, HIGH);
+      digitalWrite(motorVin2, LOW);
+      analogWrite(motorVin1, relatieveSnelheidV);
+      msg = "";
+    } 
+
+  if(msg == "d"){
+     digitalWrite(motorHin1, HIGH);
+      digitalWrite(motorHin2, LOW);
+      analogWrite(motorHin1, relatieveSnelheidH);
+      msg = "";
+    } 
+
+  if (msg != "" and msg != "start" and msg != "w" and msg != "a" and msg != "s" and msg != "d") { //nog python code veranderen en deze voorwaarde dat hij rekening houdt met een begincharacter, zo kunnen we ook van de laptop stuff sturen
 
     branden++;
     digitalWrite(motorHin1, LOW);
