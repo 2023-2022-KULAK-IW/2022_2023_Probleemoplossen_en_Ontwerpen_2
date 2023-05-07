@@ -8,10 +8,10 @@
 \contentsline {subsection}{\numberline {2.1}Hoek van de waterstraal}{3}{subsection.2.1}%
 \contentsline {subsubsection}{\numberline {2.1.1}Berekening}{3}{subsubsection.2.1.1}%
 \contentsline {subsubsection}{\numberline {2.1.2}Code}{3}{subsubsection.2.1.2}%
-\contentsline {subsection}{\numberline {2.2}Stoppen met water spuiten}{4}{subsection.2.2}%
-\contentsline {subsubsection}{\numberline {2.2.1}Berekening}{4}{subsubsection.2.2.1}%
-\contentsline {subsubsection}{\numberline {2.2.2}Code}{4}{subsubsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2}Arduino}{4}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}setup-functie}{4}{subsubsection.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.2}loopfunctie}{4}{subsubsection.2.2.2}%
 \contentsline {subsection}{\numberline {2.3}Camera}{4}{subsection.2.3}%
 \contentsline {subsubsection}{\numberline {2.3.1}Berekening}{4}{subsubsection.2.3.1}%
-\contentsline {subsubsection}{\numberline {2.3.2}Code}{4}{subsubsection.2.3.2}%
+\contentsline {subsubsection}{\numberline {2.3.2}Code}{5}{subsubsection.2.3.2}%
 \contentsline {section}{\numberline {3}Planning}{5}{section.3}%
