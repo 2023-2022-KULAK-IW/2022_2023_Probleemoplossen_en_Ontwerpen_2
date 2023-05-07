@@ -1,13 +1,34 @@
 import cv2
 import numpy as np
 import serial.tools.list_ports
+from scipy.optimize import fsolve
 
 serialInst = serial.Serial()
 
-portVal = "COM5"
 ports = serial.tools.list_ports.comports()
 
 port_list = []
+
+
+
+
+def hoekV(afstandBeker):
+    waterDebiet = 3.95  # l/min (3.95 is standaardwaarde), komt van waterflowsensor
+    straal = 0.0029
+    hoogtePlatform = 0.5
+    lengteArm = 0.48
+    afstandCamera = 0.02  # lengte tussen beginpunt arm en camera
+    hoogteBeker = 0
+
+    snelheid = (waterDebiet * 1.6667*10**(-5))/(np.pi * (straal ** 2))
+    def func(a):
+        return [-afstandBeker + np.cos(a[0]) * snelheid * a[1] + np.cos(a[0]) * lengteArm - afstandCamera,
+                -hoogteBeker + hoogtePlatform + np.sin(a[0]) * lengteArm + np.sin(a[0]) * snelheid * a[1] - 1 / 2 * 9.81 * (a[1]**2)]
+
+    opl = fsolve(func, [np.pi/2, 10])
+    opl[0] = opl[0] * 180 / np.pi
+    #opl[0]: hoek (in graden)
+    return opl[0]
 
 for onePort in ports:
     port_list.append(str(onePort))
@@ -20,45 +41,57 @@ for x in range(0,len(port_list)):
         print(portVal)
 
 serialInst.baudrate = 9600
-serialInst.port = portVal
+serialInst.port = str("COM"+val)
 serialInst.open()
+start = "start"
+
 
 cap = cv2.VideoCapture(0)
+cap.set(cv2.CAP_PROP_EXPOSURE, -8)
 
-object_width = 7
+object_height = 25
+object_width = 6
 objects_detected = 0
 focal = 16
 my_cam_angle = 60
 angle_per_pixel = my_cam_angle/640
-lowerLimit = np.array([160,150,50])
-upperLimit = np.array([180,255,255])
+lowerLimit = np.array([0,0,230])
+upperLimit = np.array([179,50,255])
+#serialInst.write(str(start).encode("utf-8"))
 
-while objects_detected < 3:
+while True:
     ret, frame = cap.read()
     hsvImage = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
     mask = cv2.inRange(hsvImage, lowerLimit, upperLimit)
     mask_contours, hierarchy = cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+
+    for i in range(len(mask_contours)):
+        cv2.drawContours(mask, mask_contours, i, (0, 255, 0), 3)
 
     if len(mask_contours) != 0:
         for mask_contour in mask_contours:
             area = cv2.contourArea(mask_contour)
             if area > 300:
                 x, y, w, h = cv2.boundingRect(mask_contour)
+                #cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 2)
                 middle = x + w / 2
                 angle_middle_horizontal = (middle - 320) * angle_per_pixel
 
                 if -0.5 < angle_middle_horizontal < 0.5:
                     angle_edge_horizontal = abs(abs((x-320) * angle_per_pixel) - abs(angle_middle_horizontal))
-                    object_on_screen = w*0.02645833333
-                    distance_focal = object_width * focal / object_on_screen
+                    object_on_screen = h*0.02645833333
+                    distance_focal = object_height * focal / object_on_screen
                     number = np.tan(angle_edge_horizontal*np.pi/180)
                     distance_angle = (object_width / 2) / number
-                    distance = (distance_angle + distance_focal)/2
+                    distance = (distance_angle + distance_focal)/200
                     print("hoek: "+ str(distance_angle), "focal: " +str(distance_focal), "uiteindelijk: " +str(distance))
                     objects_detected += 1
+                    hoek = hoekV(distance)
+                    print(hoek)
+                    serialInst.write(str(hoek).encode("utf-8"))
+                    cv2.waitKey(8000)
 
-                    serialInst.write(str(distance).encode("utf-8"))
-                    cv2.waitKey(3000)
+
 
     cv2.imshow("hsv", mask)
     cv2.imshow("normal", frame)
@@ -70,4 +103,6 @@ while objects_detected < 3:
 
 cv2.destroyAllWindows()
 cap.release()
+
+
 
