@@ -83,20 +83,17 @@ void loop()
     unsigned int frac;
     
     // Print the flow rate for this second in litres / minute
-    Serial.print("Flow rate: ");
     Serial.print(flowRate);  // Print the integer part of the variable
-    Serial.print("L/min");
+    //Serial.print(" L/min");
     Serial.print("\t"); 		  // Print tab space
     Serial.print(pulseCount);
     Serial.print("\t"); 		  // Print tab space
-    
-    // Print the cumulative total of litres flowed since starting
-    Serial.print("Output Liquid Quantity: ");        
-    Serial.print(totalMilliLitres);
-    Serial.println("mL"); 
-    Serial.print("\t"); 		  // Print tab space
-	Serial.print(totalMilliLitres/1000);
-	Serial.print("L");
+    // Print the cumulative total of litres flowed since starting      
+    Serial.println(totalMilliLitres);
+    //Serial.print(" mL"); 
+    //Serial.print("\t"); 		  // Print tab space
+	//Serial.println(totalMilliLitres/1000);
+	//Serial.println(" L");
     
 
     // Reset the pulse counter so we can start incrementing again

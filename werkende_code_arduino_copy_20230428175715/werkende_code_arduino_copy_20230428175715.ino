@@ -1,10 +1,10 @@
-int motorHin1 = 2;
+int motorHin1 = 2; // pins horizontale motor
 int motorHin2 = 3;
 
-int motorVin1 = 4;
+int motorVin1 = 4; // pins verticale motor
 int motorVin2 = 5;
 
-int pomp = 6;
+int pomp = 6; // pin pomp
 
 String msg = "";
 
@@ -13,8 +13,6 @@ int branden = 0;
 float maxSnelheidV = 150; //zelf te bepalen na testen [in rpm]
 float relatieveSnelheidV = 100; //zelf te bepalen na testen
 float msPerGraadV = (1000*255)/(maxSnelheidV*6*relatieveSnelheidV);
-
-float oudeTijd = -1;
 
 byte sensorInterrupt = 9;  // 0 = digital pin 2
 byte sensorPin       = 9;
@@ -32,7 +30,7 @@ float hoekV;
 
 void setup() {
   Serial.begin(9600);
-
+  
   pinMode(motorHin1, OUTPUT);
   pinMode(motorHin2, OUTPUT);
 
@@ -70,7 +68,7 @@ void loop(){
     msg = "";
   }
 
-  if (msg != "" and msg != "start") {
+  if (msg != "" and msg != "start") { //nog python code veranderen en deze voorwaarde dat hij rekening houdt met een begincharacter, zo kunnen we ook van de laptop stuff sturen
 
     branden++;
     digitalWrite(motorHin1, LOW);
@@ -90,10 +88,10 @@ void loop(){
     analogWrite(motorVin1,0);
 
     digitalWrite(pomp, HIGH);
-    oldTime = millis();
+    
     msg = "";
     }
-    if((millis() - oldTime) > 1000 and oldTime > 0)   
+    if((millis() - oldTime) > 1000)   
   { 
  
     detachInterrupt(sensorInterrupt);
@@ -115,7 +113,6 @@ void loop(){
     if(totalMilliLitres > 10 and hoekV != 0){
       digitalWrite(pomp, LOW);
       totalMilliLitres = 0;
-      oldTime = -1;
 
       digitalWrite(motorVin1, LOW);
       digitalWrite(motorVin2, HIGH);
