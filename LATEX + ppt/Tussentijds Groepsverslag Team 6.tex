@@ -54,7 +54,7 @@
 		
 		Daarnaast mag de robot maximaal 20 kg wegen, water inbegrepen. De effectieve brandblusser mag dus maximaal een kleine 10kg wegen.
 		
-		De werking van het blusapparaat moet volledig geautomatiseerd zijn, maar het is belangrijk dat er mogelijkheid is tot manuele override. Hierbij moeten we zelf kunnen richten en spuiten met de robotarm via de computer.
+		De werking van het blusapparaat moet volledig geautomatiseerd zijn, maar het is belangrijk dat er mogelijkheid is tot manuele override. Hierbij moeten we zelf kunnen richten en spuiten met de robotarm via de computer.V
 	
 
 	\subsection{Uiteindelijke Ontwerp}
@@ -74,8 +74,13 @@
 		
 		Verder zullen de twee lagen in ons platform bestaan uit houten planken (MDF) met een dikte van circa 1 cm. Ook voor het draaiend element op ons platform zullen we MDF gebruiken.
 		
+<<<<<<< HEAD:LATEX + ppt/Tussentijds Groepsverslag Team 6.tex
 		Voor de beweegbare arm zullen we verbindingen uit kunststof gebruiken. Deze verbindingen zijn zeer licht, wat nodig is om de verticale en rotarionele bewegingen makkelijk uit te voeren. Natuurlijk zijn de verbindingen ook stevig genoeg, dit is belangrijk om de tuit en de waterflowsensor op het uiteinde te kunnen dragen. We kunnen twee zo een latjes makkelijk aan elkaar monteren door middel van boutjes, moertjes en vlotjes. Deze latjes maken het ook makkelijk om onze motor en waterflowsensor te bevestigen.
 	
+=======
+		Voor de beweegbare arm zullen we verbindingen uit kunststof gebruiken. Deze verbindingen zijn zeer licht, wat nodig is om de verticale en rotanionele bewegingen makkelijk uit te voeren. Natuurlijk zijn de verbindingen ook stevig genoeg, dit is belangrijk om de tuit en de waterflowsensor op het uiteinde te kunnen dragen.
+		%moet er in nog meer detail beschreven worden welke materialen we gebruiken en voor wat??
+>>>>>>> master:LATEX/Tussentijds Groepsverslag Team 6.tex
 
 			\begin{figure} [!h]
 				\centering
@@ -83,7 +88,16 @@
 				\caption{Ontwerp in Solid Edge}
 				\label{ontwerp}
 			\end{figure}
-
+	\subsection{Elektrisch circuit}
+		Onze microcontroller (Arduino Nano 33 iot) is verbonden met een laptop via een usb-kabel en communiceert zo met de laptop, ook wordt de microcontroller zo gepowerd . De microcontroller moet de 2 motoren, de waterflowsensor en de pomp kunnen besturen. De webcam is rechtstreeks verbonden met de laptop en heeft de microcontroller niet nodig. Om de 2 motoren te besturen maken we gebruik van de Dual Drive DRV8833. Beide motoren worden hierop aangesloten en dan wordt dit aan de microcontroller bevestigd. De microcontroller zorgt voor de stroom voor de Dual Drive en de motoren. De waterflowsensor is rechtstreeks verbonden met de Arduino en krijgt van de Arduino zijn stroom. De pomp is verbonden met een universele voeding van 12V met ertussen een relais. De relais is verbonden met de microcontroller en zorgt ervoor dat we de stroom kunnen stoppen/doorlaten naar de pomp. De relais heeft nog een externe stroombron nodig en daarvoor gebruiken we een batterij van 9V. De relais kan maar 5V aan, dus hebben we de Step-Down Voltage Regulator gebruikt om de spanning naar 5V te brengen. 
+		
+			\begin{figure} [!h]
+			\centering
+			\includegraphics[width = .6 \textwidth]{}
+			\caption{Elektrisch Circuit}
+			\label{elektriek}
+		\end{figure}
+		
 
 
 \section{Berekeningen en code}
