@@ -8,22 +8,11 @@
 \contentsline {section}{\numberline {2}Berekeningen en code}{3}{section.2}%
 \contentsline {subsection}{\numberline {2.1}Hoek van de waterstraal}{3}{subsection.2.1}%
 \contentsline {subsubsection}{\numberline {2.1.1}Berekening}{3}{subsubsection.2.1.1}%
-<<<<<<< HEAD:LATEX + ppt/Tussentijds Groepsverslag Team 6.toc
-\contentsline {subsubsection}{\numberline {2.1.2}Code}{3}{subsubsection.2.1.2}%
-\contentsline {subsection}{\numberline {2.2}Arduino}{4}{subsection.2.2}%
-\contentsline {subsubsection}{\numberline {2.2.1}setup-functie}{4}{subsubsection.2.2.1}%
-\contentsline {subsubsection}{\numberline {2.2.2}loopfunctie}{4}{subsubsection.2.2.2}%
-\contentsline {subsection}{\numberline {2.3}Camera}{4}{subsection.2.3}%
-\contentsline {subsubsection}{\numberline {2.3.1}Berekening}{4}{subsubsection.2.3.1}%
-\contentsline {subsubsection}{\numberline {2.3.2}Code}{5}{subsubsection.2.3.2}%
-\contentsline {section}{\numberline {3}Planning}{5}{section.3}%
-=======
 \contentsline {subsubsection}{\numberline {2.1.2}Code}{4}{subsubsection.2.1.2}%
 \contentsline {subsection}{\numberline {2.2}Arduino}{4}{subsection.2.2}%
-\contentsline {subsubsection}{\numberline {2.2.1}setup-functie}{4}{subsubsection.2.2.1}%
-\contentsline {subsubsection}{\numberline {2.2.2}loopfunctie}{4}{subsubsection.2.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}Setup-functie}{4}{subsubsection.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.2}Loopfunctie}{4}{subsubsection.2.2.2}%
 \contentsline {subsection}{\numberline {2.3}Camera}{5}{subsection.2.3}%
 \contentsline {subsubsection}{\numberline {2.3.1}Berekening}{5}{subsubsection.2.3.1}%
 \contentsline {subsubsection}{\numberline {2.3.2}Code}{5}{subsubsection.2.3.2}%
 \contentsline {section}{\numberline {3}Planning}{6}{section.3}%
->>>>>>> master:LATEX/Tussentijds Groepsverslag Team 6.toc
