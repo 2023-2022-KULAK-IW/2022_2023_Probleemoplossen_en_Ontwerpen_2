@@ -6,8 +6,6 @@ int motorVin2 = 5;
 
 int pomp = 6; // pin pomp
 
-int knopje = ; // voorlopig is dit een random getal
-volatile int staatKnopje = LOW; // initialisatie van knopje
 bool isEersteLoop = true; // houdt loop bij zodat geswitched kan worden tussen manueel en automatisch
 
 String msg = ""; // initialisatie van mogelijke inkomende serial input
@@ -33,7 +31,7 @@ unsigned long oldTime;
 float hoekV;
 
 
-void setup() {
+void setup(){
   Serial.begin(9600);
   
   pinMode(motorHin1, OUTPUT);
@@ -54,34 +52,47 @@ void setup() {
   oldTime           = 0;
 
   attachInterrupt(sensorInterrupt, pulseCounter, FALLING);
-
-  pinMode(knopje, INPUT_PULLUP);
-  attachInterrupt(digitalPinToInterrupt(knopje), knopjeIngedrukt, FALLING); 
 }
 
-void knopjeIngedrukt() {
-  isEersteLoop = !isEersteLoop; // iedere keer de knop wordt ingedrukt verandert de boolean van waarde
-  staatKnopje = LOW; // zet waarde van knop weer naar LOW, zodat opnieuw ingedrukt kan worden
+
+
+void loopSwitch(){
+  isEersteLoop = !isEersteLoop; 
 }
 
-void pulseCounter()
-{
+
+
+void pulseCounter(){
   pulseCount++;
 }
 
 
+
 void loop(){
-  if (isEersteLoop) { //zorgt ervoor dat kan switchen tussen manueel en automatische werking
-    Serial.println("Dit is de automatische loop");  
+  if (isEersteLoop){ //zorgt ervoor dat kan switchen tussen manueel en automatische werking
+    digitalWrite(LED_BUILTIN, LOW);
     String msg = Serial.readString();
+    if(msg == "switch"){
+      loopSwitch();
+      return;
+    }
+    if(msg == "n"){
+      digitalWrite(motorHin1, LOW);
+        digitalWrite(motorHin2, LOW);
+        analogWrite(motorHin1, 0);
+      digitalWrite(motorVin1, LOW);
+        digitalWrite(motorVin2, LOW);
+        analogWrite(motorVin1, 0);   
+      digitalWrite(pomp, LOW);
+      msg = ""; 
+    }  
     if(msg == "start"){
       digitalWrite(motorHin1, HIGH);
       digitalWrite(motorHin2, LOW);
       analogWrite(motorHin1, relatieveSnelheidH);
       msg = "";
     }
-
-    if (msg != "" and msg != "start") { 
+    if (msg != "" and msg != "start" and msg != "switch"){ 
       branden++;
       digitalWrite(motorHin1, LOW);
       digitalWrite(motorHin2, LOW);
@@ -102,7 +113,6 @@ void loop(){
       digitalWrite(pomp, HIGH);
       
       msg = "";
-      }
 
       if((millis() - oldTime) > 1000) { 
         detachInterrupt(sensorInterrupt);
@@ -111,6 +121,8 @@ void loop(){
         flowMilliLitres = (flowRate / 60) * 1000;
         totalMilliLitres += flowMilliLitres;
         unsigned int frac;
+        Serial.println(flowRate);
+        Serial.println(totalMilliLitres);
         pulseCount = 0;
         attachInterrupt(sensorInterrupt, pulseCounter, FALLING);
       }
@@ -133,43 +145,54 @@ void loop(){
           digitalWrite(motorHin2, LOW);
           analogWrite(motorHin1, relatieveSnelheidH);
         } 
-      }
-    
+      } 
+    }
   }
-  else { //manuele werking
-    Serial.println("Dit is de manuele loop");
+  else{ //manuele werking
+    digitalWrite(LED_BUILTIN, HIGH);
     String msg = Serial.readString();
+    if(msg == "switch"){
+      loopSwitch();
+      return;
+    }
     if(msg == "w"){
       digitalWrite(motorVin1, LOW);
         digitalWrite(motorVin2, HIGH);
         analogWrite(motorVin2, relatieveSnelheidV);
         msg = "";
-      } 
-    
+    } 
     if(msg == "a"){
       digitalWrite(motorHin1, LOW);
         digitalWrite(motorHin2, HIGH);
         analogWrite(motorHin2, relatieveSnelheidH);
         msg = "";
-      }
-
+    }
     if(msg == "s"){
       digitalWrite(motorVin1, HIGH);
         digitalWrite(motorVin2, LOW);
         analogWrite(motorVin1, relatieveSnelheidV);
         msg = "";
-      } 
-
+    } 
     if(msg == "d"){
       digitalWrite(motorHin1, HIGH);
         digitalWrite(motorHin2, LOW);
         analogWrite(motorHin1, relatieveSnelheidH);
         msg = "";
-      } 
-    else {
-      delay(200);
+    } 
+    if(msg == "p"){
+      digitalWrite(pomp, HIGH);
+      msg = "";
     }
-    
+    if(msg != "w" and msg != "a" and msg != "s" and msg != "d" and msg != "p" and msg != "switch"){
+      digitalWrite(motorHin1, LOW);
+        digitalWrite(motorHin2, LOW);
+        analogWrite(motorHin1, 0);
+      digitalWrite(motorVin1, LOW);
+        digitalWrite(motorVin2, LOW);
+        analogWrite(motorVin1, 0);   
+      digitalWrite(pomp, LOW);
+      msg = ""; 
+    }   
   }
 }
 
