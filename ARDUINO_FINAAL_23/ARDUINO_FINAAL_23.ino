@@ -89,45 +89,44 @@ void loop(){
     analogWrite(motorHin1, relatieveSnelheidH);
     msg = "";
   }
+    if (msg != "" and msg != "start") {
 
-  if (msg != "" and msg != "start") {
-
-    branden++;
-    digitalWrite(motorHin1, LOW);
-    digitalWrite(motorHin2, LOW);
-    analogWrite(motorHin1, 0);
-    
-    hoekV = msg.toFloat();
-    
-    digitalWrite(motorVin1, HIGH);
-    digitalWrite(motorVin2, LOW);
-    analogWrite(motorVin1,relatieveSnelheidV);
-
-    delay(hoekV*msPerGraadV);
-
-    digitalWrite(motorVin1, LOW);
-    digitalWrite(motorVin2, LOW);
-    analogWrite(motorVin1,0);
-
-    digitalWrite(pomp, HIGH);
-    delay(30000);
-    digitalWrite(pomp, LOW);
-    digitalWrite(motorVin1, LOW);
-    digitalWrite(motorVin2, HIGH);
-    analogWrite(motorVin2,relatieveSnelheidV-50);
-
-    delay(hoekV*msPerGraadV);
-
-    digitalWrite(motorVin1, LOW);
-    digitalWrite(motorVin2, LOW);
-    analogWrite(motorVin2,0);
-    if(branden < 3){
-      digitalWrite(motorHin1, HIGH);
+      branden++;
+      digitalWrite(motorHin1, LOW);
       digitalWrite(motorHin2, LOW);
-      analogWrite(motorHin1, relatieveSnelheidH);
+      analogWrite(motorHin1, 0);
+      
+      hoekV = msg.toFloat();
+      
+      digitalWrite(motorVin1, HIGH);
+      digitalWrite(motorVin2, LOW);
+      analogWrite(motorVin1,relatieveSnelheidV);
+
+      delay(hoekV*msPerGraadV);
+
+      digitalWrite(motorVin1, LOW);
+      digitalWrite(motorVin2, LOW);
+      analogWrite(motorVin1,0);
+
+      digitalWrite(pomp, HIGH);
+      delay(30000);
+      digitalWrite(pomp, LOW);
+      digitalWrite(motorVin1, LOW);
+      digitalWrite(motorVin2, HIGH);
+      analogWrite(motorVin2,relatieveSnelheidV-50);
+
+      delay(hoekV*msPerGraadV);
+
+      digitalWrite(motorVin1, LOW);
+      digitalWrite(motorVin2, LOW);
+      analogWrite(motorVin2,0);
+      if(branden < 3){
+        digitalWrite(motorHin1, HIGH);
+        digitalWrite(motorHin2, LOW);
+        analogWrite(motorHin1, relatieveSnelheidH);
     } 
   
-  msg = "";
+   msg = "";
   }
   if((millis() - oldTime) > 1000 and oldTime > 0)   
   { 
