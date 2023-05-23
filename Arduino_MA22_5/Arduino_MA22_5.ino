@@ -1,18 +1,20 @@
-int motorHin1 = 2; // pins horizontale motor
+int motorHin1 = 2;
 int motorHin2 = 3;
 
-int motorVin1 = 4; // pins verticale motor
+int motorVin1 = 4;
 int motorVin2 = 5;
 
-int pomp = 6; // pin pomp
+int pomp = 6;
 
 String msg = "";
 
-float relatieveSnelheidH = 255;
+float relatieveSnelheidH = 220;
 int branden = 0;
-float maxSnelheidV = 150; //zelf te bepalen na testen [in rpm]
-int relatieveSnelheidV = 100; //zelf te bepalen na testen
+float maxSnelheidV = 50; //zelf te bepalen na testen [in rpm]
+float relatieveSnelheidV = 90; //zelf te bepalen na testen
 float msPerGraadV = (1000*255)/(maxSnelheidV*6*relatieveSnelheidV);
+
+float oudeTijd = -1;
 
 byte sensorInterrupt = 9;  // 0 = digital pin 2
 byte sensorPin       = 9;
@@ -30,7 +32,7 @@ float hoekV;
 
 void setup() {
   Serial.begin(9600);
-  
+
   pinMode(motorHin1, OUTPUT);
   pinMode(motorHin2, OUTPUT);
 
@@ -62,41 +64,13 @@ void pulseCounter()
 void loop(){
   String msg = Serial.readString();
   if(msg == "start"){
-    digitalWrite(motorHin1, LOW);
-    digitalWrite(motorHin2, HIGH);
+    digitalWrite(motorHin1, HIGH);
+    digitalWrite(motorHin2, LOW);
     analogWrite(motorHin1, relatieveSnelheidH);
     msg = "";
   }
 
-  if(msg == "w"){
-     digitalWrite(motorVin1, LOW);
-      digitalWrite(motorVin2, HIGH);
-      analogWrite(motorVin2, relatieveSnelheidV);
-      msg = "";
-    } 
-  
-  if(msg == "a"){
-    digitalWrite(motorHin1, LOW);
-      digitalWrite(motorHin2, HIGH);
-      analogWrite(motorHin2, relatieveSnelheidH);
-      msg = "";
-    }
-
-  if(msg == "s"){
-     digitalWrite(motorVin1, HIGH);
-      digitalWrite(motorVin2, LOW);
-      analogWrite(motorVin1, relatieveSnelheidV);
-      msg = "";
-    } 
-
-  if(msg == "d"){
-     digitalWrite(motorHin1, HIGH);
-      digitalWrite(motorHin2, LOW);
-      analogWrite(motorHin1, relatieveSnelheidH);
-      msg = "";
-    } 
-
-  if (msg != "" and msg != "start" and msg != "w" and msg != "a" and msg != "s" and msg != "d") { //nog python code veranderen en deze voorwaarde dat hij rekening houdt met een begincharacter, zo kunnen we ook van de laptop stuff sturen
+  if (msg != "" and msg != "start") {
 
     branden++;
     digitalWrite(motorHin1, LOW);
@@ -116,10 +90,26 @@ void loop(){
     analogWrite(motorVin1,0);
 
     digitalWrite(pomp, HIGH);
+    delay(10000);
+    digitalWrite(pomp, LOW);
+    digitalWrite(motorVin1, LOW);
+      digitalWrite(motorVin2, HIGH);
+      analogWrite(motorVin2,relatieveSnelheidV-50);
+
+      delay(hoekV*msPerGraadV);
+
+      digitalWrite(motorVin1, LOW);
+      digitalWrite(motorVin2, LOW);
+      analogWrite(motorVin2,0);
+      if(branden < 3){
+        digitalWrite(motorHin1, HIGH);
+        digitalWrite(motorHin2, LOW);
+        analogWrite(motorHin1, relatieveSnelheidH);
+      } 
     
     msg = "";
     }
-    if((millis() - oldTime) > 1000)   
+    if((millis() - oldTime) > 1000 and oldTime > 0)   
   { 
  
     detachInterrupt(sensorInterrupt);
@@ -138,23 +128,4 @@ void loop(){
     attachInterrupt(sensorInterrupt, pulseCounter, FALLING);
   }
 
-    if(totalMilliLitres > 10 and hoekV != 0){
-      digitalWrite(pomp, LOW);
-      totalMilliLitres = 0;
-
-      digitalWrite(motorVin1, LOW);
-      digitalWrite(motorVin2, HIGH);
-      analogWrite(motorVin2,relatieveSnelheidV);
-
-      delay(hoekV*msPerGraadV);
-
-      digitalWrite(motorVin1, LOW);
-      digitalWrite(motorVin2, LOW);
-      analogWrite(motorVin2,0);
-      if(branden < 3){
-        digitalWrite(motorHin1, HIGH);
-        digitalWrite(motorHin2, LOW);
-        analogWrite(motorHin1, relatieveSnelheidH);
-      } 
-    }
 }
