@@ -19,7 +19,7 @@ float oudeTijd = -1;
 byte sensorInterrupt = 9;  // 0 = digital pin 2
 byte sensorPin       = 9;
 
-float calibrationFactor = 4.5;
+float calibrationFactor = 3.33;
 
 volatile byte pulseCount;  
 
@@ -90,7 +90,7 @@ void loop(){
     analogWrite(motorVin1,0);
 
     digitalWrite(pomp, HIGH);
-    delay(10000);
+    delay(30000);
     digitalWrite(pomp, LOW);
     digitalWrite(motorVin1, LOW);
       digitalWrite(motorVin2, HIGH);
@@ -114,13 +114,11 @@ void loop(){
  
     detachInterrupt(sensorInterrupt);
 
-    flowRate = ((1000.0 / (millis() - oldTime)) * pulseCount) / calibrationFactor;
+    flowRate = ((1000.0 / (millis() - oldTime)) * pulseCount) * calibrationFactor;
 
     oldTime = millis();
 
-    flowMilliLitres = (flowRate / 60) * 1000;
-
-    totalMilliLitres += flowMilliLitres;
+    totalMilliLitres += flowRate;
       
     unsigned int frac;
 

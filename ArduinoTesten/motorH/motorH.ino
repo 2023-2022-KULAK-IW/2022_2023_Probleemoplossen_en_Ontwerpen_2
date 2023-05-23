@@ -13,13 +13,4 @@ void loop() {
     digitalWrite(motorHin2, LOW);
     analogWrite(motorHin1, relatieveSnelheidH);
 
-    """
-    delay(2000);
-    digitalWrite(motorHin1,LOW);
-    digitalWrite(motorHin2, LOW);
-    analogWrite(motorHin1, 0);
-
-    delay(2000);
-    """
-
 }

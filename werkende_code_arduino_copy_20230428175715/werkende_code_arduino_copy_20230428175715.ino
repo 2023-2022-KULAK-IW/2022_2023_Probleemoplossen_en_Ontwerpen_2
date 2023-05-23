@@ -10,8 +10,8 @@ String msg = "";
 
 float relatieveSnelheidH = 255;
 int branden = 0;
-float maxSnelheidV = 150; //zelf te bepalen na testen [in rpm]
-int relatieveSnelheidV = 100; //zelf te bepalen na testen
+float maxSnelheidV = 80; //zelf te bepalen na testen [in rpm]
+int relatieveSnelheidV = 75; //zelf te bepalen na testen
 float msPerGraadV = (1000*255)/(maxSnelheidV*6*relatieveSnelheidV);
 
 byte sensorInterrupt = 9;  // 0 = digital pin 2
