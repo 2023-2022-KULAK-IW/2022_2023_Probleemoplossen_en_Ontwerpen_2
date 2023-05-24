@@ -8,10 +8,10 @@ int pomp = 6; // pin pomp
 
 String msg = "";
 
-float relatieveSnelheidH = 75;
+float relatieveSnelheidH = 255;
 int branden = 0;
-float maxSnelheidV = 150; //zelf te bepalen na testen [in rpm]
-float relatieveSnelheidV = 100; //zelf te bepalen na testen
+float maxSnelheidV = 80; //zelf te bepalen na testen [in rpm]
+int relatieveSnelheidV = 75; //zelf te bepalen na testen
 float msPerGraadV = (1000*255)/(maxSnelheidV*6*relatieveSnelheidV);
 
 byte sensorInterrupt = 9;  // 0 = digital pin 2
@@ -62,8 +62,8 @@ void pulseCounter()
 void loop(){
   String msg = Serial.readString();
   if(msg == "start"){
-    digitalWrite(motorHin1, HIGH);
-    digitalWrite(motorHin2, LOW);
+    digitalWrite(motorHin1, LOW);
+    digitalWrite(motorHin2, HIGH);
     analogWrite(motorHin1, relatieveSnelheidH);
     msg = "";
   }
