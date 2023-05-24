@@ -6,6 +6,11 @@ int motorVin2 = 5;
 
 int pomp = 6; // pin pomp
 
+<<<<<<< HEAD
+=======
+int knopje = ; // voorlopig is dit een random getal
+volatile int staatKnopje = LOW; // initialisatie van knopje
+>>>>>>> master
 bool isEersteLoop = true; // houdt loop bij zodat geswitched kan worden tussen manueel en automatisch
 
 String msg = ""; // initialisatie van mogelijke inkomende serial input
@@ -31,7 +36,11 @@ unsigned long oldTime;
 float hoekV;
 
 
+<<<<<<< HEAD
 void setup(){
+=======
+void setup() {
+>>>>>>> master
   Serial.begin(9600);
   
   pinMode(motorHin1, OUTPUT);
@@ -52,6 +61,7 @@ void setup(){
   oldTime           = 0;
 
   attachInterrupt(sensorInterrupt, pulseCounter, FALLING);
+<<<<<<< HEAD
 }
 
 
@@ -63,10 +73,25 @@ void loopSwitch(){
 
 
 void pulseCounter(){
+=======
+
+  pinMode(knopje, INPUT_PULLUP);
+  attachInterrupt(digitalPinToInterrupt(knopje), knopjeIngedrukt, FALLING); 
+}
+
+void knopjeIngedrukt() {
+  isEersteLoop = !isEersteLoop; // iedere keer de knop wordt ingedrukt verandert de boolean van waarde
+  staatKnopje = LOW; // zet waarde van knop weer naar LOW, zodat opnieuw ingedrukt kan worden
+}
+
+void pulseCounter()
+{
+>>>>>>> master
   pulseCount++;
 }
 
 
+<<<<<<< HEAD
 
 void loop(){
   if (isEersteLoop){ //zorgt ervoor dat kan switchen tussen manueel en automatische werking
@@ -86,13 +111,24 @@ void loop(){
       digitalWrite(pomp, LOW);
       msg = ""; 
     }  
+=======
+void loop(){
+  if (isEersteLoop) { //zorgt ervoor dat kan switchen tussen manueel en automatische werking
+    Serial.println("Dit is de automatische loop");  
+    String msg = Serial.readString();
+>>>>>>> master
     if(msg == "start"){
       digitalWrite(motorHin1, HIGH);
       digitalWrite(motorHin2, LOW);
       analogWrite(motorHin1, relatieveSnelheidH);
       msg = "";
     }
+<<<<<<< HEAD
     if (msg != "" and msg != "start" and msg != "switch"){ 
+=======
+
+    if (msg != "" and msg != "start") { 
+>>>>>>> master
       branden++;
       digitalWrite(motorHin1, LOW);
       digitalWrite(motorHin2, LOW);
@@ -113,6 +149,10 @@ void loop(){
       digitalWrite(pomp, HIGH);
       
       msg = "";
+<<<<<<< HEAD
+=======
+      }
+>>>>>>> master
 
       if((millis() - oldTime) > 1000) { 
         detachInterrupt(sensorInterrupt);
@@ -121,8 +161,11 @@ void loop(){
         flowMilliLitres = (flowRate / 60) * 1000;
         totalMilliLitres += flowMilliLitres;
         unsigned int frac;
+<<<<<<< HEAD
         Serial.println(flowRate);
         Serial.println(totalMilliLitres);
+=======
+>>>>>>> master
         pulseCount = 0;
         attachInterrupt(sensorInterrupt, pulseCounter, FALLING);
       }
@@ -145,6 +188,7 @@ void loop(){
           digitalWrite(motorHin2, LOW);
           analogWrite(motorHin1, relatieveSnelheidH);
         } 
+<<<<<<< HEAD
       } 
     }
   }
@@ -155,29 +199,53 @@ void loop(){
       loopSwitch();
       return;
     }
+=======
+      }
+    
+  }
+  else { //manuele werking
+    Serial.println("Dit is de manuele loop");
+    String msg = Serial.readString();
+>>>>>>> master
     if(msg == "w"){
       digitalWrite(motorVin1, LOW);
         digitalWrite(motorVin2, HIGH);
         analogWrite(motorVin2, relatieveSnelheidV);
         msg = "";
+<<<<<<< HEAD
     } 
+=======
+      } 
+    
+>>>>>>> master
     if(msg == "a"){
       digitalWrite(motorHin1, LOW);
         digitalWrite(motorHin2, HIGH);
         analogWrite(motorHin2, relatieveSnelheidH);
         msg = "";
+<<<<<<< HEAD
     }
+=======
+      }
+
+>>>>>>> master
     if(msg == "s"){
       digitalWrite(motorVin1, HIGH);
         digitalWrite(motorVin2, LOW);
         analogWrite(motorVin1, relatieveSnelheidV);
         msg = "";
+<<<<<<< HEAD
     } 
+=======
+      } 
+
+>>>>>>> master
     if(msg == "d"){
       digitalWrite(motorHin1, HIGH);
         digitalWrite(motorHin2, LOW);
         analogWrite(motorHin1, relatieveSnelheidH);
         msg = "";
+<<<<<<< HEAD
     } 
     if(msg == "p"){
       digitalWrite(pomp, HIGH);
@@ -193,6 +261,13 @@ void loop(){
       digitalWrite(pomp, LOW);
       msg = ""; 
     }   
+=======
+      } 
+    else {
+      delay(200);
+    }
+    
+>>>>>>> master
   }
 }
 

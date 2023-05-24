@@ -17,7 +17,7 @@
 \@nameuse{bbl@beforestart}
 \catcode `"\active 
 \babel@aux{dutch}{}
-\pgfsyspdfmark {pgfid2}{0}{1572864}
+\pgfsyspdfmark {pgfid2}{0}{0}
 \pgfsyspdfmark {pgfid1}{6577079}{47493192}
 \@writefile{toc}{\contentsline {section}{\numberline {1}Ontwerp}{1}{section.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {1.1}Klantenvereisten}{1}{subsection.1.1}\protected@file@percent }
@@ -38,8 +38,8 @@
 \@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces \input "Tussentijds Groepsverslag Team 6"-1.cpt\relax }}{4}{figure.4}\protected@file@percent }
 \newlabel{flowchart_water}{{4}{4}{\protect \input "Tussentijds Groepsverslag Team 6"-1.cpt\relax }{figure.4}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Arduino}{4}{subsection.2.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.1}setup-functie}{4}{subsubsection.2.2.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.2}loopfunctie}{4}{subsubsection.2.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.1}Setup-functie}{4}{subsubsection.2.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.2}Loopfunctie}{4}{subsubsection.2.2.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Camera}{5}{subsection.2.3}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.3.1}Berekening}{5}{subsubsection.2.3.1}\protected@file@percent }
 \newlabel{camera}{{4}{5}{Berekening}{equation.2.4}{}}
