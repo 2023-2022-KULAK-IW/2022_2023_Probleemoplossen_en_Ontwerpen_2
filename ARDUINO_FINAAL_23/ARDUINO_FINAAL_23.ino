@@ -6,12 +6,12 @@ int motorVin2 = 5;
 
 int pomp = 6; // pin pomp
 
-bool isEersteLoop = false; // houdt loop bij zodat geswitched kan worden tussen manueel en automatisch
+bool isEersteLoop = true; // houdt loop bij zodat geswitched kan worden tussen manueel en automatisch
 
 String msg = ""; // initialisatie van mogelijke inkomende serial input
 
-float relatieveSnelheidHaut = 220; // wordt verzonden naar de driver die de snelheid van de horizontale motor controlleert
-float relatieveSnelheidHman = 50;
+float relatieveSnelheidHaut = 225; // wordt verzonden naar de driver die de snelheid van de horizontale motor controlleert
+float relatieveSnelheidHman = 100;
 int branden = 0; // tel bijhouden van aantal gebluste branden
 float maxSnelheidV = 50; //zelf te bepalen na testen [in rpm]
 float relatieveSnelheidVaut = 90; // wordt verzonden naar de driver die de snelheid van de verticale motor controlleert
@@ -19,7 +19,7 @@ float relatieveSnelheidVman = 50;
 float msPerGraadV = (1000*255)/(maxSnelheidV*6*relatieveSnelheidVaut); //tijd die de verticale motor nodig heeft om zich te richten per graad
 
 byte sensorInterrupt = 7;  // 0 = digital pin 2
-byte sensorPin       = ;
+byte sensorPin = 7;
 
 float calibrationFactor = 3.3; //calibratieconstante va de waterflowsensor
 
@@ -44,6 +44,8 @@ void setup(){
 
   pinMode(pomp, OUTPUT);
 
+  pinMode(LED_BUILTIN, OUTPUT);
+
   pinMode(sensorPin, INPUT);
   digitalWrite(sensorPin, HIGH);
 
@@ -66,12 +68,14 @@ void pulseCounter(){
 
 void loop(){
   String msg = Serial.readString();
-  if (isEersteLoop){ //zorgt ervoor dat kan switchen tussen manueel en automatische werking
-    Serial.println(msg);
+  //Serial.print("De Arduino kreeg volgende input: ");
+  //Serial.println(msg);
+  if(isEersteLoop){ //zorgt ervoor dat kan switchen tussen manueel en automatische werking
     digitalWrite(LED_BUILTIN, LOW);
     if(msg == "switch"){
-      Serial.println("geswitched");
       isEersteLoop = !isEersteLoop;
+      Serial.println(isEersteLoop);
+      msg = "";
     }
     if(msg == "n"){
       digitalWrite(motorHin1, LOW);
@@ -81,9 +85,11 @@ void loop(){
         digitalWrite(motorVin2, LOW);
         analogWrite(motorVin1, 0);   
       digitalWrite(pomp, LOW);
+      Serial.println(msg);
       msg = ""; 
     }  
     if(msg == "start"){
+<<<<<<< HEAD
     digitalWrite(motorHin1, HIGH);
     digitalWrite(motorHin2, LOW);
     analogWrite(motorHin1, relatieveSnelheidH);
@@ -94,12 +100,24 @@ void loop(){
       branden++;
       digitalWrite(motorHin1, LOW);
       digitalWrite(motorHin2, LOW);
+=======
+      digitalWrite(motorHin1, HIGH);
+      digitalWrite(motorHin2, LOW);
+      analogWrite(motorHin1, relatieveSnelheidHaut);
+      msg = "";
+    }
+    if (msg != "" and msg != "start" and msg != "n" and msg != "switch"){
+      branden++;
+      digitalWrite(motorHin1, LOW);
+      digitalWrite(motorHin2, LOW);
+>>>>>>> master
       analogWrite(motorHin1, 0);
       
       hoekV = msg.toFloat();
       
       digitalWrite(motorVin1, HIGH);
       digitalWrite(motorVin2, LOW);
+<<<<<<< HEAD
       analogWrite(motorVin1,relatieveSnelheidV);
 
       delay(hoekV*msPerGraadV);
@@ -132,45 +150,80 @@ void loop(){
   { 
  
     detachInterrupt(sensorInterrupt);
+=======
+      analogWrite(motorVin1,relatieveSnelheidVaut);
+>>>>>>> master
 
-    flowRate = ((1000.0 / (millis() - oldTime)) * pulseCount) * calibrationFactor;
+      delay(hoekV*msPerGraadV);
 
-    oldTime = millis();
+      digitalWrite(motorVin1, LOW);
+      digitalWrite(motorVin2, LOW);
+      analogWrite(motorVin1,0);
 
-    totalMilliLitres += flowRate;
-    unsigned int frac;
+      digitalWrite(pomp, HIGH);
+      delay(10000);
+      digitalWrite(pomp, LOW);
+      digitalWrite(motorVin1, LOW);
+      digitalWrite(motorVin2, HIGH);
+      analogWrite(motorVin2,relatieveSnelheidVaut-50);
 
-    pulseCount = 0;
-    attachInterrupt(sensorInterrupt, pulseCounter, FALLING);
-  }
+      delay(hoekV*msPerGraadV);
+
+      digitalWrite(motorVin1, LOW);
+      digitalWrite(motorVin2, LOW);
+      analogWrite(motorVin2,0);
+      if(branden < 3){
+        digitalWrite(motorHin1, HIGH);
+        digitalWrite(motorHin2, LOW);
+        analogWrite(motorHin1, relatieveSnelheidHaut);
+      } 
+      msg = "";
+    }
+    if((millis() - oldTime) > 1000 and oldTime > 0){
+      detachInterrupt(sensorInterrupt);
+      flowRate = ((1000.0 / (millis() - oldTime)) * pulseCount) * calibrationFactor;
+      oldTime = millis();
+      totalMilliLitres += flowRate;
+      unsigned int frac;
+      Serial.println(flowRate);
+      Serial.println(totalMilliLitres);
+      pulseCount = 0;
+      attachInterrupt(sensorInterrupt, pulseCounter, FALLING);
+    }
   }
   else{ //manuele werking
+    digitalWrite(LED_BUILTIN, HIGH);
     if(msg == "switch"){
       isEersteLoop = !isEersteLoop;
+      Serial.println(isEersteLoop);
       msg = "";
     }
     if(msg == "w"){
       digitalWrite(motorVin1, LOW);
         digitalWrite(motorVin2, HIGH);
         analogWrite(motorVin2, relatieveSnelheidVman);
+        Serial.println(msg);
         msg = "";
     } 
     if(msg == "a"){
       digitalWrite(motorHin1, LOW);
         digitalWrite(motorHin2, HIGH);
         analogWrite(motorHin2, relatieveSnelheidHman);
+        Serial.println(msg);
         msg = "";
     }
     if(msg == "s"){
       digitalWrite(motorVin1, HIGH);
         digitalWrite(motorVin2, LOW);
         analogWrite(motorVin1, relatieveSnelheidVman);
+        Serial.println(msg);
         msg = "";
     } 
     if(msg == "d"){
       digitalWrite(motorHin1, HIGH);
         digitalWrite(motorHin2, LOW);
         analogWrite(motorHin1, relatieveSnelheidHman);
+        Serial.println(msg);
         msg = "";
     } 
     if(msg == "p"){
@@ -186,6 +239,7 @@ void loop(){
         digitalWrite(motorVin2, LOW);
         analogWrite(motorVin1, 0);   
       digitalWrite(pomp, LOW);
+      Serial.println(msg);
       msg = ""; 
     }   
   }
