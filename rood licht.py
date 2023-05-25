@@ -89,10 +89,10 @@ def camera_mode():
                         distance_focal = object_height * focal / object_on_screen
                         print("focal: " + str(distance_focal))
                         objects_detected += 1
-                        hoek = hoekV(distance_focal)
+                        hoek = hoekV(distance_focal/100)
                         print(hoek)
                         serialInst.write(str(hoek).encode("utf-8"))
-                        cv2.waitKey(8000)
+                        cv2.waitKey(15000)
 
         cv2.imshow("hsv", mask)
         cv2.imshow("normal", frame)
